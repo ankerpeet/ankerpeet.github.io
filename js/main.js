@@ -2,7 +2,7 @@
 addNavigation();
 var tabs = ["home", "portfolio", "skills", "experience", "apps", "contact"];
 var currentTab = "";
-//getUrlParams();
+getPageParam();
 
 function rotate(tab) {
   if(tab != currentTab) {
@@ -10,6 +10,7 @@ function rotate(tab) {
     $(".cube").addClass("cube--show-" + tab); 
     $(".tab-" + tab + " ." + tab).addClass("button-active");
     //$(".tab-" + currentTab + " ." + currentTab).removeClass("button-active");
+    setPageParam(tab);
     currentTab = tab;
   }
   updateClasses();
@@ -51,20 +52,25 @@ function addNavigation() {
   $(".nav").html(nav);
 }
 
-function getUrlParams() {
-  var urlParams = new URLSearchParams(window.location.search);
+function getPageParam() {
   var tab = "home"
-  if(urlParams.has('page')) {
-    var myParam = urlParams.get('page');
-    if(tabs.includes(myParam)) {
-      tab = myParam;
+  if ('URLSearchParams' in window) {
+    var urlParams = new URLSearchParams(window.location.search);
+    if(urlParams.has('page')) {
+      var myParam = urlParams.get('page');
+      if(tabs.includes(myParam)) {
+        tab = myParam;
+      }
     }
-    else {
-      tab = "home";
-    }
-  }
-  else {
-    tab = "home";
   }
   rotate(tab);
+}
+
+function setPageParam(newTab) {
+  if ('URLSearchParams' in window) {
+    var searchParams = new URLSearchParams(window.location.search)
+    searchParams.set("page", newTab);
+    var newRelativePathQuery = window.location.pathname + '?' + searchParams.toString();
+    history.pushState(null, '', newRelativePathQuery);
+  }
 }
