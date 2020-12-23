@@ -1,0 +1,27 @@
+.about-me {
+    padding: 5rem;
+}
+
+.image-container {
+    padding: 5rem;
+    background-image: url("../assets/mountain-background.jpg");
+    text-align: center;
+}
+
+.profile-pic {
+    height: auto;
+    border-radius: 50%;
+    max-width: 40rem;
+}
+
+.profile-pic, .profile-name {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.profile-name {  
+    background-color: rgba(0,0,0,.25);
+    color: white;
+    padding: 1rem;
+    margin-top: 2rem;
+}

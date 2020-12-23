@@ -1,7 +1,13 @@
-/* todo: I need to add a a style for each side that i can assign to each side of the cube as it rotates so that it maintains its shape from all sides */
+@import "cube.css";
+@import "profile.css";
+
 
 * { 
   box-sizing: border-box; 
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body, html { 
@@ -11,153 +17,21 @@ body, html {
   overflow: hidden;
 }
 
+.container {
+  margin-top: 5rem;
+}
+
 p {
   background-color: black;
   color: white;
-  padding: 25px;
+  margin-bottom: 2rem;
 }
-
-.image-container {
-  text-align: center;
-}
-
-.profile-pic {
-  max-width: 40rem;
-  border-radius: 50%;
-  border: black 3px solid;
-}
-
-.scene {
-  width: 100vw;
-  height: 100vh;
-/*   perspective: 800px; */
-  perspective: 100vw;
-}
-
-.cube {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  transform-style: preserve-3d;
-  transform: translateZ(50vh);
-  transition: transform 1.3s;
-}
-
-.tab {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  border: 2px solid black;
-  background-color: rgba(0,0,0,1);
-  overflow: hidden;
-  padding: 15px;
-}
-
-/* Rotate each tab to form the cube */
-.tab-home  {
-  transform: rotateY(0deg) translateZ(50vh); 
-}
-.tab-apps {
-  transform: rotateY(180deg) translateZ(50vh); 
-}
-.tab-contact {
-  transform: rotateX(-90deg) translateZ(50vh); 
-}
-.tab-skills {
-  transform: rotateX(90deg) translateZ(50vh); 
-}
-.tab-portfolio {
-  transform: rotateY(90deg) translateZ(50vh); 
-}
-.tab-experience {
-  transform: rotateY(-90deg) translateZ(50vh); 
-}
-
-.left {
-  width: 100vh;
-  height: 100%;
-  left: 0vw;
-}
-.right {
-  width: 100vh;
-  height: 100%;
-  right: 0vw;
-}
-
-.left-home {
-  width: 100vw;
-  height: 100vh;
-  transform: rotateY(0deg) translateZ(50vw); 
-}
-.right-apps {
-  width: 100vw;
-  height: 100vh;
-  transform: rotateY(180deg) translateZ(50vw); 
-}
-
-.bottom {
-  width: 100vw;
-  height: 100vw;
-  bottom: 0vh;
-  transform: rotateX(-90deg) translateZ(50vw);
-}
-.top {
-  width: 100vw;
-  height: 100vw;
-  top: 0vh;
-  transform: rotateX(90deg) translateZ(50vw);
-}
-.back {
-  width: 100vw;
-  height: 100vh;
-  transform: rotateY(-90deg) translateZ(50vw);
-}
-.back-portfolio {
-  width: 100vw;
-  height: 100vh;
-  transform: rotateY(90deg) translateZ(50vw);
-}
-.front {
-  width: 100vw;
-  height: 100vh;
-  transform: rotateY(90deg) translateZ(50vw);
-}
-.front-experience {
-  width: 100vw;
-  height: 100vh;
-  transform: rotateY(-90deg) translateZ(50vw);
-}
-
-
-/* Add and remove these classes to the .cube div to rotate the whole cube */
-.cube--show-home  {
-  transform: translateZ(-50vh) rotateY(0deg); 
-}
-.cube--show-contact {
-  transform: translateZ(-50vh) rotateX(90deg);
-}
-.cube--show-portfolio {
-  transform: translateZ(-50vw) rotateY(-90deg); 
-}
-.cube--show-skills {
-  transform: translateZ(-50vh) rotateX(-90deg);
-}
-.cube--show-experience {
-  transform: translateZ(-50vw) rotateY(90deg);
-}
-.cube--show-apps {
-  transform: translateZ(-50vh) rotateY(180deg);
-}
-
-.cp_embed_wrapper {
-  margin-top: 25px;
-}
-
 
 .btn {
   color: black;
   outline: none;
   border: none;
+  border-radius: 0;
 }
 
 .button-active {
@@ -169,26 +43,19 @@ p {
   overflow-x: hidden; /* Hide horizontal scrollbar */
   overflow-y: auto;
   height: 100%;
-/*   display: none; */
 }
 
 ::-webkit-scrollbar {
   width: 7px;
 }
-
-/* Track */
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey; 
   border-radius: 25px;
 }
- 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: grey; 
   border-radius: 25px;
 }
-
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: white; 
 }
