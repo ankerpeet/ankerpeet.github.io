@@ -11,7 +11,6 @@
     transform-style: preserve-3d;
     transform: translateZ(50vh);
     transition: transform 1.3s;
-    background-color: white;
   }
   
   .tab {
@@ -21,6 +20,7 @@
     border: 2px solid black;
     overflow: hidden;
     padding: 15px;
+    background-color: white;
   }
   
   /* Rotate each tab to form the cube */
