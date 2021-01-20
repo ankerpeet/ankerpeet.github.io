@@ -11,6 +11,7 @@
     transform-style: preserve-3d;
     transform: translateZ(50vh);
     transition: transform 1.3s;
+    background-color: white;
   }
   
   .tab {
