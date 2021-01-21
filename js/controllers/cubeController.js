@@ -1,9 +1,16 @@
 function CubeController() {
-    addNavigation();
     var tabs = ["home", "portfolio", "skills", "experience", "apps", "contact"];
     var currentTab = "";
+    var loadedTabs = {
+        home: false,
+        portfolio: false,
+        skills: false,
+        experience: false,
+        apps: false,
+        contact: false,
+    }
     getPageParam();
-
+    
     function rotate(tab) {
         if(tab != currentTab) {
             $(".cube").removeClass("cube--show-" + currentTab);
@@ -11,8 +18,10 @@ function CubeController() {
             $(".tab-" + tab + " ." + tab).addClass("button-active");    
             setPageParam(tab);
             currentTab = tab;
+            if(!loadedTabs[tab]) {
+                loadContent(tab);
+            }
         }
-
         updateClasses();
     }
 
@@ -40,22 +49,27 @@ function CubeController() {
         }
     }
 
-    function addNavigation() {
-        var nav = `
-        <button id="home" class="btn home">Home</button>
-        <button id="portfolio" class="btn portfolio">Portfolio</button>
-        <button id="skills" class="btn skills">Skills</button> 
-        <button id="experience" class="btn experience">Experience</button> 
-        <button id="apps" class="btn apps">Apps</button>
-        <button id="contact" class="btn contact">Contact</button>
-        `;
-        $(".nav").html(nav);
+    function addNavigation(id) {
+        var nav = `      
+        <button onclick="app.controllers.cubeController.toggleNav()" type="button" class="navbar-toggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+        </button>`;
+        for(var i = 0; i < tabs.length; i++) {
+            var tab = tabs[i];
+            nav += `<button onclick="app.controllers.cubeController.changeTab('${tab}')" id="${tab}" class="btn nav-link ${tab}">${tab}</button>`
+        }
+        $(id).html(nav);
     }
 
-    $(".nav .btn").click(function(event) {
-        var id = event.target.id;
-        rotate(id);
-    });
+    this.toggleNav = function() {
+        $(".nav-link").toggle();
+    }
+
+    this.changeTab = function(tab) {
+        rotate(tab);
+    }
 
     function getPageParam() {
         var tab = "home"
@@ -69,6 +83,7 @@ function CubeController() {
             }
         }
         rotate(tab);
+        preloadContent();
     }
 
     function setPageParam(newTab) {
@@ -79,4 +94,20 @@ function CubeController() {
             history.pushState(null, '', newRelativePathQuery);
         }
     }   
+
+    function preloadContent() {
+        for(var i = 0; i < tabs.length; i++) {
+            var tab = tabs[i];
+            if(!loadedTabs[tab]) {
+                loadContent(tab);
+            }
+        }
+    }
+
+    function loadContent(tab) {
+        $(`#${tab}Content`).load(`../../components/${tab}.html`, function(){
+            addNavigation(`#${tab}Nav`);
+        });
+        loadedTabs[tab] = true;
+    }
 }

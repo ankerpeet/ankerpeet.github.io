@@ -1,7 +1,7 @@
 function ContactController(){
 	var contactService = new ContactService();
-	
-    $("#contactForm").submit(function(event) {
+    
+    this.submitContactForm = function(event) {
         event.preventDefault();
         $("#messageFormButton").prop("disabled",true);
         contactService.sendMessage(function(data){
@@ -11,6 +11,6 @@ function ContactController(){
             $("#alert").show();
             $("#messageFormButton").prop("disabled",false); 
             setTimeout(function(){ $("#alert").hide(); }, 5000);           
-        })
-    });
+        });
+    }
 }

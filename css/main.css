@@ -28,6 +28,7 @@ p {
   border-radius: 0;
 }
 
+
 .nav .btn:hover {  
  background-color: #181818;
 }
@@ -76,4 +77,25 @@ p {
 
 .alert {
   margin: 0 auto;
+}
+
+.icon-bar {
+  background-color: black;
+}
+
+.navbar-toggle {
+  background-color: rgb(239, 239, 239);
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav .btn {
+    width: 100%;
+  }
+  .nav-link  {
+    display: none;
+  }
+  .navbar-toggle {
+    display: block;
+  }
 }
