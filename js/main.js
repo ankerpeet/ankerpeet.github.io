@@ -1,4 +1,3 @@
-//todo: get screen shots of my portfolio projects and then open modal on click that contains the iframe of the project
 addNavigation();
 var tabs = ["home", "portfolio", "skills", "experience", "apps", "contact"];
 var currentTab = "";
@@ -8,12 +7,21 @@ function rotate(tab) {
   if(tab != currentTab) {
     $(".cube").removeClass("cube--show-" + currentTab);
     $(".cube").addClass("cube--show-" + tab); 
-    $(".tab-" + tab + " ." + tab).addClass("button-active");
-    //$(".tab-" + currentTab + " ." + currentTab).removeClass("button-active");
+    $(".tab-" + tab + " ." + tab).addClass("button-active");    
     setPageParam(tab);
     currentTab = tab;
   }
+
   updateClasses();
+  loadSubModule(currentTab);
+}
+
+function loadSubModule(tab) {
+  if(tab == "contact") {
+    import('./contact').then(function(module) {
+      module.init();
+    })
+  }
 }
 
 function updateClasses() {
@@ -42,15 +50,20 @@ function updateClasses() {
 
 function addNavigation() {
   var nav = `
-  <button class="btn home" onclick="rotate('home')">Home</button>
-  <button class="btn portfolio" onclick="rotate('portfolio')">Portfolio</button>
-  <button class="btn skills" onclick="rotate('skills')">Skills</button> 
-  <button class="btn experience" onclick="rotate('experience')">Experience</button> 
-  <button class="btn apps" onclick="rotate('apps')">Apps</button>
-  <button class="btn contact" onclick="rotate('contact')">Contact</button>
+  <button id="home" class="btn home">Home</button>
+  <button id="portfolio" class="btn portfolio">Portfolio</button>
+  <button id="skills" class="btn skills">Skills</button> 
+  <button id="experience" class="btn experience">Experience</button> 
+  <button id="apps" class="btn apps">Apps</button>
+  <button id="contact" class="btn contact">Contact</button>
   `;
   $(".nav").html(nav);
 }
+
+$(".nav .btn").click(function(event) {
+  var id = event.target.id;
+  rotate(id);
+});
 
 function getPageParam() {
   var tab = "home"
