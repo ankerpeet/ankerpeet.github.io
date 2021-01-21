@@ -13,15 +13,6 @@ function rotate(tab) {
   }
 
   updateClasses();
-  loadSubModule(currentTab);
-}
-
-function loadSubModule(tab) {
-  if(tab == "contact") {
-    import('./contact').then(function(module) {
-      module.init();
-    })
-  }
 }
 
 function updateClasses() {

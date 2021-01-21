@@ -1,23 +1,21 @@
-export function init() {
-    $("#contactForm").submit(function(event) {
-        $("#messageFormButton").prop("disabled",true);
+$("#contactForm").submit(function(event) {
+    event.preventDefault();
+    $("#messageFormButton").prop("disabled",true);
+    var local = false;
+    var url = local ? "http://localhost:4000/api/email" : "https://anker-peet.herokuapp.com/api/email";
 
-        event.preventDefault();
-        var url = "http://localhost:4000/api/email";
+    var messageObj = {
+        "email": $("#email").val(),
+        "message": $("#message").val()
+    }
 
-        var messageObj = {
-            "email": $("#email").val(),
-            "message": $("#message").val()
-        }
+    console.log(messageObj)
 
-        console.log(messageObj)
-
-        $.post(url, JSON.stringify(messageObj)).then(res => {
-            console.log("res: ", res);
-        }).fail(err => {
-            console.log("Failed to send.", err);
-        }).always(() => {
-            $("#messageFormButton").prop("disabled",false);
-        });
+    $.post(url, messageObj).then(res => {
+        console.log("res: ", res);
+    }).fail(err => {
+        console.log("Failed to send.", err);
+    }).always(() => {
+        $("#messageFormButton").prop("disabled",false);
     });
-}
+});
