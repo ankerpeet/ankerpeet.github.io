@@ -74,10 +74,13 @@ function CubeController() {
     }
 
     this.changeTab = function(tab) {
+        if($( window ).width() <= 700) {
+            $(".nav").hide();
+        }
         rotate(tab);
     }
 
-    $(window).resize(function(event){
+    $(window).resize(function(){
         if($( window ).width() > 700) {
             $(".nav").show();
         }
@@ -88,10 +91,10 @@ function CubeController() {
         if ('URLSearchParams' in window) {
             var urlParams = new URLSearchParams(window.location.search);
             if(urlParams.has('page')) {
-            var myParam = urlParams.get('page');
-            if(tabs.includes(myParam)) {
-                tab = myParam;
-            }
+                var myParam = urlParams.get('page');
+                if(tabs.includes(myParam)) {
+                    tab = myParam;
+                }
             }
         }
         rotate(tab);
