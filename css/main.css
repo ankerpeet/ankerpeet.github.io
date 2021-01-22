@@ -9,25 +9,36 @@ html {
 body, html { 
   margin: 0;
   padding: 0;
-  color: black;
+  color: white;
+  background-color: #202020;
 }
 
 .container {
-  margin-top: 5rem;
+  padding: 10rem;
 }
 
 p {
   margin-bottom: 2rem;
 }
 
+h1, h2, h3 {
+  margin-top: 0;
+}
+
+/* #202020 */
 .nav .btn {
-  background-color: #202020;
+  background-color: black;
   color: white;
   outline: none;
   border: none;
-  border-radius: 0;
+  border-radius: 0 8px 8px 0;
+  width: 100%;
 }
 
+.nav {
+  background-color: black;
+  border-right: solid 1px #606060;
+}
 
 .nav .btn:hover {  
  background-color: #181818;
@@ -47,8 +58,6 @@ p {
 }
 
 .content {
-  overflow-x: hidden; /* Hide horizontal scrollbar */
-  overflow-y: auto;
   height: 100%;
 }
 
@@ -88,14 +97,23 @@ p {
   display: none;
 }
 
-@media only screen and (max-width: 600px) {
-  .nav .btn {
-    width: 100%;
-  }
-  .nav-link  {
+@media only screen and (max-width: 700px) {
+  .nav  {
     display: none;
+    border: none;
+    width: 100%;
   }
   .navbar-toggle {
     display: block;
+  }
+  .container {
+    padding: 3rem;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 701px) {
+  .nav {
+    height: 100%;
   }
 }

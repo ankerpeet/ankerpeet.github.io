@@ -2,6 +2,7 @@
     width: 100vw;
     height: 100vh;
     perspective: 100vw;
+    overflow: hidden;
   }
   
   .cube {
@@ -18,7 +19,8 @@
     width: 100vw;
     height: 100vh;
     padding: 15px;
-    background-color: white;
+    background-color: #090909;
+    overflow-y: auto;
   }
   
   /* Rotate each tab to form the cube */

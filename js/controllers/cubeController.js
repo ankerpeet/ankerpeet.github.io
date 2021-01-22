@@ -50,26 +50,38 @@ function CubeController() {
     }
 
     function addNavigation(id) {
-        var nav = `      
+        var nav = ``;
+        for(var i = 0; i < tabs.length; i++) {
+            var tab = tabs[i];
+            nav += `<button onclick="app.controllers.cubeController.changeTab('${tab}')" id="${tab}" class="btn nav-link ${tab} ${tab == id ? "button-active" : ""}">${tab}</button>`
+        }
+        $(`#${id}Nav`).html(nav);
+    }
+
+    function addNavToggle(tab) {
+        var toggle = `      
         <button onclick="app.controllers.cubeController.toggleNav()" type="button" class="navbar-toggle">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
         </button>`;
-        for(var i = 0; i < tabs.length; i++) {
-            var tab = tabs[i];
-            nav += `<button onclick="app.controllers.cubeController.changeTab('${tab}')" id="${tab}" class="btn nav-link ${tab}">${tab}</button>`
-        }
-        $(id).html(nav);
+
+        $(`.toggleContainer.${tab}`).html(toggle);
     }
 
     this.toggleNav = function() {
-        $(".nav-link").toggle();
+        $(".nav").toggle();
     }
 
     this.changeTab = function(tab) {
         rotate(tab);
     }
+
+    $(window).resize(function(event){
+        if($( window ).width() > 700) {
+            $(".nav").show();
+        }
+    });
 
     function getPageParam() {
         var tab = "home"
@@ -106,7 +118,8 @@ function CubeController() {
 
     function loadContent(tab) {
         $(`#${tab}Content`).load(`../../components/${tab}.html`, function(){
-            addNavigation(`#${tab}Nav`);
+            addNavigation(tab);
+            addNavToggle(tab);
         });
         loadedTabs[tab] = true;
     }
