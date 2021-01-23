@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+
 * { 
   box-sizing: border-box; 
 }
@@ -10,9 +12,34 @@ body, html {
   margin: 0;
   padding: 0;
   color: white;
-  background-color: #202020;
+  background-color: var(--some-dark);
 }
 
+#logo {
+  color: var(--purple);
+  text-align: center;
+  width: 100%;
+  padding: 2rem;
+  font-family: 'Allerta Stencil', sans-serif;
+  font-size: 4rem;
+  border: none;
+  outline: none;
+  background-color: var(--dark);
+}
+
+.fa {
+  font-size: 3rem;
+  color: var(--light);
+}
+
+.socialContainer {  
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.stencil {
+  font-family: 'Allerta Stencil', sans-serif;
+}
 .container {
   padding: 10rem;
 }
@@ -25,9 +52,17 @@ h1, h2, h3 {
   margin-top: 0;
 }
 
+h1 {
+  color: var(--white);
+}
+
+.underline {
+  border-bottom: var(--purple) solid 4px;  
+}
+
 /* #202020 */
-.nav .btn {
-  background-color: black;
+.nav-link {
+  background-color: var(--dark);
   color: white;
   outline: none;
   border: none;
@@ -36,12 +71,13 @@ h1, h2, h3 {
 }
 
 .nav {
-  background-color: black;
-  border-right: solid 1px #606060;
+  background-color: var(--dark);
+  border-right: solid 1px #303030;
 }
 
-.nav .btn:hover {  
+.nav-link:hover {  
  background-color: #181818;
+ color: white;
 }
 
 .nav .button-active {
@@ -93,8 +129,18 @@ h1, h2, h3 {
 }
 
 .navbar-toggle {
-  background-color: rgb(239, 239, 239);
+  background-color:var(--purple);
   display: none;
+}
+
+.btn-primary {
+  background-color: var(--blue);
+  border: none;
+  outline: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--light);
 }
 
 @media only screen and (max-width: 700px) {

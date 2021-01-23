@@ -50,11 +50,13 @@ function CubeController() {
     }
 
     function addNavigation(id) {
-        var nav = ``;
+        var nav = `<button onclick="app.controllers.cubeController.changeTab('home')" id="logo">A</button>`;
         for(var i = 0; i < tabs.length; i++) {
             var tab = tabs[i];
             nav += `<button onclick="app.controllers.cubeController.changeTab('${tab}')" id="${tab}" class="btn nav-link ${tab} ${tab == id ? "button-active" : ""}">${tab}</button>`
         }
+        nav += `<div class="socialContainer"><div class="socialLink"><a target="_blank" href="https://www.linkedin.com/in/anker-peet/"><i class="fa fa-linkedin-square"></i></a></div>`
+        nav += `<div class="socialLink"><a target="_blank" href="https://github.com/ankerpeet"><i class="fa fa-github-square"></i></a></div></div>`
         $(`#${id}Nav`).html(nav);
     }
 
