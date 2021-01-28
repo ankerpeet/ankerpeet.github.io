@@ -33,7 +33,7 @@
   .tab-contact {
     transform: rotateX(-90deg) translateZ(50vh); 
   }
-  .tab-skills {
+  .tab-education {
     transform: rotateX(90deg) translateZ(50vh); 
   }
   .tab-portfolio {
@@ -109,7 +109,7 @@
   .cube--show-portfolio {
     transform: translateZ(-50vw) rotateY(-90deg); 
   }
-  .cube--show-skills {
+  .cube--show-education {
     transform: translateZ(-50vh) rotateX(-90deg);
   }
   .cube--show-experience {

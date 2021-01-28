@@ -89,6 +89,11 @@ h1 {
   background-color: #E8E8E8;  
 }
 
+.btn, .btn:hover, .btn:active, .btn:focus, .btn:active.btn:focus{
+  border: none;
+  outline: none;
+}
+
 .btn-primary {
   color: white;
 }
@@ -137,10 +142,35 @@ h1 {
   background-color: var(--blue);
   border: none;
   outline: none;
+  margin-bottom: 15px;
 }
 
 .btn-primary:hover {
   background-color: var(--light);
+}
+
+.panel {
+  padding: 15px;
+}
+
+.panel-default .panel-heading {
+  background-color: var(--some-dark);
+  border-radius: 8px 8px 0 0;
+  border-bottom: var(--purple) 1px solid;
+}
+
+.panel-default .panel-heading h3 {
+  color: white;
+}
+
+.panel-body {
+  background-color: var(--some-dark);
+  border-radius: 8px;
+}
+
+.panel-default {    
+  background-color: var(--some-dark);
+  border: none;
 }
 
 @media only screen and (max-width: 700px) {

@@ -1,10 +1,10 @@
 function CubeController() {
-    var tabs = ["home", "portfolio", "skills", "experience", "apps", "contact"];
+    var tabs = ["home", "portfolio", "education", "experience", "apps", "contact"];
     var currentTab = "";
     var loadedTabs = {
         home: false,
         portfolio: false,
-        skills: false,
+        education: false,
         experience: false,
         apps: false,
         contact: false,
@@ -27,7 +27,7 @@ function CubeController() {
 
     function updateClasses() {
         $(".tab").removeClass("right left back front top bottom front-experience left-home right-apps back-portfolio");
-        if(currentTab == "home" || currentTab == "contact" || currentTab == "skills" || currentTab == "apps") {
+        if(currentTab == "home" || currentTab == "contact" || currentTab == "education" || currentTab == "apps") {
             $(".tab-portfolio").addClass("right");
             $(".tab-experience").addClass("left");
         }
@@ -36,7 +36,7 @@ function CubeController() {
             $(".tab-home").addClass("left-home");
             $(".tab-experience").addClass("back");
             $(".tab-portfolio").addClass("front");
-            $(".tab-skills").addClass("top");
+            $(".tab-education").addClass("top");
             $(".tab-contact").addClass("bottom");
         }
         else {
@@ -44,7 +44,7 @@ function CubeController() {
             $(".tab-apps").addClass("left-home");
             $(".tab-experience").addClass("front-experience");
             $(".tab-portfolio").addClass("back-portfolio");
-            $(".tab-skills").addClass("top");
+            $(".tab-education").addClass("top");
             $(".tab-contact").addClass("bottom");
         }
     }
