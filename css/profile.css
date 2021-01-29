@@ -18,11 +18,11 @@
     height: auto;
     border-radius: 50%;
     max-width: 40rem;
+    margin: 0 auto;
 }
 
 .profile-pic, .profile-name {
     width: 100%;
-    margin: 0 auto;
 }
 
 .profile-name {  
