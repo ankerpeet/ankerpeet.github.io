@@ -75,7 +75,7 @@ h1 {
   border-right: solid 1px #303030;
 }
 
-.nav-link:hover {  
+.nav-link:hover, .nav-link:active, .nav-link:focus {  
  background-color: #181818;
  color: white;
 }
