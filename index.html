@@ -12,6 +12,25 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/cube.css">
     <link rel="stylesheet" href="./css/profile.css">
+  </head>
+  <body>
+    <div class="background">
+      <div class="cube cube--show-home">
+        <div id="homeContent"       class="tab tab-home"></div>
+        <div id="portfolioContent"  class="tab tab-portfolio right"></div>
+        <div id="contactContent"    class="tab tab-contact"></div>
+        <div id="educationContent"  class="tab tab-education"></div>
+        <div id="experienceContent" class="tab tab-experience left"></div> 
+        <div id="appsContent"       class="tab tab-apps"></div>
+      </div>
+    </div>
+    <div id="alert"></div>
+      <!-- scripts -->  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/services/contactService.js"></script>
+    <script src="./js/controllers/contactController.js"></script>
+    <script src="./js/controllers/cubeController.js"></script>
+    <script src="./js/init.js"></script>
     <script>
       (function(){
         var tabs = ["home", "portfolio", "education", "experience", "apps", "contact"];
@@ -35,24 +54,5 @@
         }
       })();
     </script>
-  </head>
-  <body>
-    <div class="background">
-      <div class="cube cube--show-home">
-        <div id="homeContent"       class="tab tab-home"></div>
-        <div id="portfolioContent"  class="tab tab-portfolio right"></div>
-        <div id="contactContent"    class="tab tab-contact"></div>
-        <div id="educationContent"  class="tab tab-education"></div>
-        <div id="experienceContent" class="tab tab-experience left"></div> 
-        <div id="appsContent"       class="tab tab-apps"></div>
-      </div>
-    </div>
-    <div id="alert"></div>
-      <!-- scripts -->  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./js/services/contactService.js"></script>
-    <script src="./js/controllers/contactController.js"></script>
-    <script src="./js/controllers/cubeController.js"></script>
-    <script src="./js/init.js"></script>
   </body>
 </html>
