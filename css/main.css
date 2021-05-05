@@ -25,6 +25,7 @@ body, html {
   border: none;
   outline: none;
   background-color: var(--dark);
+  display: block;
 }
 
 .fa {
