@@ -14,10 +14,24 @@
     <link rel="stylesheet" href="./css/profile.css">
     <script>
       (function(){
+        var tabs = ["home", "portfolio", "education", "experience", "apps", "contact"];
         var redirect = sessionStorage.redirect;
         delete sessionStorage.redirect;
         if (redirect && redirect != location.href) {
+
+            console.log("redirect: ", redirect)
             history.replaceState(null, null, redirect);
+            app.controllers.cubeController.changeTab(getTab(redirect));
+        }
+        function getTab(str) {
+          var tab = "home";
+          for(var i = 0; i < tabs.length; i++) {
+            if(str.includes(tabs[i])) {
+              tab = tabs[i];
+            }
+          }
+          console.log("tab: ", tab);
+          return tab;
         }
       })();
     </script>
