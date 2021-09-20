@@ -25,7 +25,8 @@ function CubeController() {
         if(tab != currentTab) {
             $(".cube").removeClass("cube--show-" + currentTab);
             $(".cube").addClass("cube--show-" + tab); 
-            $(".tab-" + tab + " ." + tab).addClass("button-active");    
+            $(".tab-" + tab + " ." + tab).addClass("button-active");
+            $(".tab-" + tab).addClass("current-tab");  
             setPageParam(tab);
             currentTab = tab;
             if(!loadedTabs[tab]) {
