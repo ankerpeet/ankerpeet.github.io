@@ -21,6 +21,7 @@
     padding: 15px;
     background-color: var(--dark);
     overflow-y: auto;
+    z-index: 0;
   }
   
   /* Rotate each tab to form the cube */
@@ -123,3 +124,6 @@
     margin-top: 25px;
   }
   
+.current-tab {
+    z-index: 100;
+}
