@@ -20,8 +20,8 @@
     height: 100vh;
     padding: 15px;
     background-color: var(--dark);
-    overflow-y: auto;
-    z-index: 0;
+    /* overflow-y: auto; */
+    z-index: -100;
   }
   
   /* Rotate each tab to form the cube */
