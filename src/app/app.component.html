@@ -1,4 +1,4 @@
-<main>
+<main class="background">
     <div [ngClass]="'cube cube--show-' + currentTab">
         <app-tab id="homeContent"       class="tab tab-home" [ngClass]="{'left-home': !isStraight}"><app-home></app-home></app-tab>
         <app-tab id="portfolioContent"  class="tab tab-portfolio" [ngClass]="{'right': isStraight, 'front': currentTab == 'portfolio', 'back-portfolio': currentTab == 'experience'}"><app-codepen></app-codepen></app-tab>
