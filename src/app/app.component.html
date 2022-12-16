@@ -1,0 +1,10 @@
+<main>
+    <div [ngClass]="'cube cube--show-' + currentTab">
+        <app-tab id="homeContent"       class="tab tab-home" [ngClass]="{'left-home': !isStraight}"><app-home></app-home></app-tab>
+        <app-tab id="portfolioContent"  class="tab tab-portfolio" [ngClass]="{'right': isStraight, 'front': currentTab == 'portfolio', 'back-portfolio': currentTab == 'experience'}"><app-codepen></app-codepen></app-tab>
+        <app-tab id="contactContent"    class="tab tab-contact" [ngClass]="{'bottom': !isStraight}"><app-contact></app-contact></app-tab>
+        <app-tab id="educationContent"  class="tab tab-education" [ngClass]="{'top': !isStraight}"><app-education></app-education></app-tab>
+        <app-tab id="experienceContent" class="tab tab-experience" [ngClass]="{'left': isStraight, 'back': currentTab == 'portfolio', 'front-experience': currentTab == 'experience'}"><app-experience></app-experience></app-tab>
+        <app-tab id="appsContent"       class="tab tab-apps" [ngClass]="{'right-apps': !isStraight}"><app-projects></app-projects></app-tab>
+    </div>
+</main>

@@ -1,0 +1,150 @@
+:root {
+    --dark: black;
+    --some-dark: #202020;
+    --white: #fff;
+    --purple: #854ff6;
+    --blue: #4905c7;
+    --light: #5a99fd;
+}
+
+.tab {
+    display: flex;
+}
+
+:host {
+    display: flex;
+    height: 100%;
+}
+
+main {
+    width: 100%;
+}
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    perspective: 100vw;
+    overflow: hidden;
+}
+
+.cube {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(50vh);
+    transition: transform 1s;
+}
+
+.tab {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    padding: 15px;
+    background-color: var(--dark);
+    /* overflow-y: auto; */
+    z-index: -100;
+}
+
+/* Rotate each tab to form the cube */
+.tab-home {
+    transform: rotateY(0deg) translateZ(50vh);
+}
+.tab-apps {
+    transform: rotateY(180deg) translateZ(50vh);
+}
+.tab-contact {
+    transform: rotateX(-90deg) translateZ(50vh);
+}
+.tab-education {
+    transform: rotateX(90deg) translateZ(50vh);
+}
+.tab-portfolio {
+    transform: rotateY(90deg) translateZ(50vh);
+}
+.tab-experience {
+    transform: rotateY(-90deg) translateZ(50vh);
+}
+
+.left {
+    width: 100vh;
+    height: 100%;
+    left: 0vw;
+}
+.right {
+    width: 100vh;
+    height: 100%;
+    right: 0vw;
+}
+
+.left-home {
+    width: 100vw;
+    height: 100vh;
+    transform: rotateY(0deg) translateZ(50vw);
+}
+.right-apps {
+    width: 100vw;
+    height: 100vh;
+    transform: rotateY(180deg) translateZ(50vw);
+}
+
+.bottom {
+    width: 100vw;
+    height: 100vw;
+    bottom: 0vh;
+    transform: rotateX(-90deg) translateZ(50vw);
+}
+.top {
+    width: 100vw;
+    height: 100vw;
+    top: 0vh;
+    transform: rotateX(90deg) translateZ(50vw);
+}
+.back {
+    width: 100vw;
+    height: 100vh;
+    transform: rotateY(-90deg) translateZ(50vw);
+}
+.back-portfolio {
+    width: 100vw;
+    height: 100vh;
+    transform: rotateY(90deg) translateZ(50vw);
+}
+.front {
+    width: 100vw;
+    height: 100vh;
+    transform: rotateY(90deg) translateZ(50vw);
+}
+.front-experience {
+    width: 100vw;
+    height: 100vh;
+    transform: rotateY(-90deg) translateZ(50vw);
+}
+
+/* Add and remove these classes to the .cube div to rotate the whole cube */
+.cube--show-home {
+    transform: translateZ(-50vh) rotateY(0deg);
+}
+.cube--show-contact {
+    transform: translateZ(-50vh) rotateX(90deg);
+}
+.cube--show-portfolio {
+    transform: translateZ(-50vw) rotateY(-90deg);
+}
+.cube--show-education {
+    transform: translateZ(-50vh) rotateX(-90deg);
+}
+.cube--show-experience {
+    transform: translateZ(-50vw) rotateY(90deg);
+}
+.cube--show-apps {
+    transform: translateZ(-50vh) rotateY(180deg);
+}
+
+.cp_embed_wrapper {
+    margin-top: 25px;
+}
+
+.current-tab {
+    z-index: 100;
+}

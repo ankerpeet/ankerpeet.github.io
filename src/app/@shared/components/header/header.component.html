@@ -1,0 +1,11 @@
+<div class="nav">
+    <a routerLink="/" id="logo" class='spa-link'>A</a>
+    <a class="btn" [ngClass]="{'active': currentRoute == '/'}" routerLink="/">home</a>
+    <a class="btn" [ngClass]="{'active': currentRoute == '/projects'}" routerLink="/projects">projects</a>
+    <a class="btn" [ngClass]="{'active': currentRoute == '/experience'}" routerLink="/experience">experience</a>
+    <a class="btn" [ngClass]="{'active': currentRoute == '/education'}" routerLink="/education">education</a>
+    <a class="btn" [ngClass]="{'active': currentRoute == '/codepen'}"routerLink="/codepen">codepen</a>
+    <a class="btn" [ngClass]="{'active': currentRoute == '/contact'}" routerLink="/contact">contact</a>
+    <div class="socialContainer"><div class="socialLink"><a target="_blank" href="https://www.linkedin.com/in/anker-peet/"><i class="fa fa-linkedin-square"></i></a></div>
+    <div class="socialLink"><a target="_blank" href="https://github.com/ankerpeet"><i class="fa fa-github-square"></i></a></div></div>
+</div>

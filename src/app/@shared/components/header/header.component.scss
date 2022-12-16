@@ -1,0 +1,65 @@
+#logo {
+    color: purple;
+    text-align: center;
+    width: 100%;
+    padding: 2rem;
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 4rem;
+    border: none;
+    outline: none;
+    background-color: black;
+    display: block;
+}
+
+.fa {
+    font-size: 3rem;
+    color: white;
+}
+
+.socialContainer {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.nav .btn {
+    background-color: black;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    width: 100%;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    border-right: solid 1px #303030;
+    height: 100%;
+    padding-right: 15px;
+}
+
+.nav-link:hover,
+.nav-link:active,
+.nav-link:focus {
+    background-color: #181818;
+    color: white;
+}
+
+.nav .active {
+    background-color: white;
+    color: black;
+}
+
+.nav .button-active:hover {
+    background-color: #e8e8e8;
+}
+
+.btn,
+.btn:hover,
+.btn:active,
+.btn:focus,
+.btn:active.btn:focus {
+    border: none;
+    outline: none;
+}

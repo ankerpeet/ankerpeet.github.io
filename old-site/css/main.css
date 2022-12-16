@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: black;
+}
+
+.stencil {
+    font-family: 'Allerta Stencil', sans-serif;
+}
+.container {
+    padding: 10rem;
+}
+
+p {
+    margin-bottom: 2rem;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+}
+
+h1 {
+    color: var(--white);
+}
+
+.underline {
+    border-bottom: var(--purple) solid 4px;
+}
+
+/* #202020 */
+.nav-link {
+    background-color: var(--dark);
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 0 8px 8px 0;
+    width: 100%;
+}
+
+.nav {
+    background-color: var(--dark);
+    border-right: solid 1px #303030;
+}
+
+.nav-link:hover,
+.nav-link:active,
+.nav-link:focus {
+    background-color: #181818;
+    color: white;
+}
+
+.nav .button-active {
+    background-color: white;
+    color: black;
+}
+
+.nav .button-active:hover {
+    background-color: #e8e8e8;
+}
+
+.btn,
+.btn:hover,
+.btn:active,
+.btn:focus,
+.btn:active.btn:focus {
+    border: none;
+    outline: none;
+}
+
+.btn-primary {
+    color: white;
+}
+
+.content {
+    height: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 25px;
+}
+::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 25px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: white;
+}
+
+#alert {
+    position: fixed;
+    bottom: 0;
+    padding: 15px;
+    margin: 0 auto;
+    display: none;
+}
+
+.alert {
+    margin: 0 auto;
+}
+
+.icon-bar {
+    background-color: black;
+}
+
+.navbar-toggle {
+    background-color: var(--purple);
+    display: none;
+}
+
+.btn-primary {
+    background-color: var(--blue);
+    border: none;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+.btn-primary:hover {
+    background-color: var(--light);
+}
+
+.panel {
+    padding: 15px;
+}
+
+.panel-default .panel-heading {
+    background-color: var(--some-dark);
+    border-radius: 8px 8px 0 0;
+    border-bottom: var(--purple) 1px solid;
+}
+
+.panel-default .panel-heading h3 {
+    color: white;
+}
+
+.panel-body {
+    background-color: var(--some-dark);
+    border-radius: 8px;
+}
+
+.panel-default {
+    background-color: var(--some-dark);
+    border: none;
+}
+
+@media only screen and (max-width: 700px) {
+    .nav {
+        display: none;
+        border: none;
+        width: 100%;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .container {
+        padding: 3rem;
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 701px) {
+    .nav {
+        height: 100%;
+    }
+}
