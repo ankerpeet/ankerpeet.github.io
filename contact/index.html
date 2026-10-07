@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Request a Website Audit | Anker Peet</title>
+  <meta name="description" content="Send your site URL, goals, and known problem areas. Anker Peet will reply with a scoped recommendation and a fixed-price audit proposal.">
+  <link rel="canonical" href="https://www.ankerpeet.com/contact/">
+  <meta name="theme-color" content="#4f43c9">
+  <meta name="author" content="Anker Peet">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Anker Peet">
+  <meta property="og:title" content="Request a website audit | Anker Peet">
+  <meta property="og:description" content="Start with your URL. Get a scoped recommendation and fixed-price proposal.">
+  <meta property="og:url" content="https://www.ankerpeet.com/contact/">
+  <meta property="og:image" content="https://www.ankerpeet.com/assets/img/og-image.jpg">
+  <meta property="og:image:alt" content="Portrait of Anker Peet">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="/assets/js/main.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "url": "https://www.ankerpeet.com/contact/",
+    "name": "Contact Anker Peet",
+    "mainEntity": { "@type": "Person", "name": "Anker Peet", "email": "mailto:ankerpeet@gmail.com" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md" aria-label="Primary">
+      <div class="container">
+        <a class="navbar-brand" href="/"><img class="brand-mark" src="/assets/img/logo-96.png" width="32" height="32" alt="">Anker Peet</a>
+        <button class="navbar-toggler" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="primary-nav">
+          <ul class="navbar-nav ms-auto align-items-md-center">
+            <li class="nav-item"><a class="nav-link" href="/services/">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="/articles/">Articles</a></li>
+            <li class="nav-item ms-md-2"><a class="btn btn-primary btn-sm" href="/contact/" aria-current="page">Request an audit</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Contact</li>
+          </ol>
+        </nav>
+        <div style="max-width:44rem">
+          <p class="eyebrow">Contact</p>
+          <h1 id="page-title" class="mb-3">Start with your URL.</h1>
+          <p class="lead mb-0">Send the site, your goals, and any known problem areas. I'll reply with a scoped recommendation and fixed-price proposal.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-sm pb-5" aria-label="Contact form and details">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-7">
+            <div class="info-card">
+              <h2 class="h4 mb-1">Request a proposal</h2>
+              <p class="small mb-4" style="color:var(--ap-muted)">Fields marked <span class="required-mark" aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
+
+              <!-- TODO: set action/method once the backend is wired up. -->
+              <form id="contact-form" action="#" method="post" novalidate>
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label for="name" class="form-label">Name <span class="required-mark" aria-hidden="true">*</span></label>
+                    <input type="text" class="form-control" id="name" name="name" autocomplete="name" required>
+                    <div id="name-error" class="invalid-feedback">Please enter your name.</div>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="email" class="form-label">Email <span class="required-mark" aria-hidden="true">*</span></label>
+                    <input type="email" class="form-control" id="email" name="email" autocomplete="email" required>
+                    <div id="email-error" class="invalid-feedback">Please enter a valid email address, like name@example.com.</div>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="company" class="form-label">Company <span class="fw-normal" style="color:var(--ap-muted)">(optional)</span></label>
+                    <input type="text" class="form-control" id="company" name="company" autocomplete="organization">
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="website" class="form-label">Website URL <span class="required-mark" aria-hidden="true">*</span></label>
+                    <input type="url" class="form-control" id="website" name="website" autocomplete="url" placeholder="https://" required aria-describedby="website-hint">
+                    <div id="website-hint" class="form-text">Include https://</div>
+                    <div id="website-error" class="invalid-feedback">Please enter a full URL starting with https://</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="audit" class="form-label">Which audit are you interested in? <span class="required-mark" aria-hidden="true">*</span></label>
+                    <select class="form-select" id="audit" name="audit" required>
+                      <option value="">Select an option</option>
+                      <option value="full">Full Frontend Health Audit (from $2,500)</option>
+                      <option value="accessibility">Accessibility Audit (from $1,500)</option>
+                      <option value="performance">Performance Audit (from $1,000)</option>
+                      <option value="unsure">Not sure yet</option>
+                    </select>
+                    <div id="audit-error" class="invalid-feedback">Please choose an option.</div>
+                  </div>
+                  <div class="col-12">
+                    <label for="message" class="form-label">Goals and known problem areas <span class="required-mark" aria-hidden="true">*</span></label>
+                    <textarea class="form-control" id="message" name="message" rows="6" required aria-describedby="message-hint"></textarea>
+                    <div id="message-hint" class="form-text">Key user journeys, business priorities, deadlines, or anything you already know is broken.</div>
+                    <div id="message-error" class="invalid-feedback">Please tell me a little about your goals.</div>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary btn-lg">Send request</button>
+                  </div>
+                </div>
+                <div id="form-status" class="form-status" role="status" tabindex="-1"></div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="info-card mb-4">
+              <h2 class="h5">Prefer email?</h2>
+              <p class="mb-2">Reach me directly at:</p>
+              <p class="mb-0 fs-5 fw-semibold"><a href="mailto:ankerpeet@gmail.com">ankerpeet@gmail.com</a></p>
+            </div>
+            <div class="info-card mb-4">
+              <h2 class="h5">What happens next</h2>
+              <ol class="mb-0 ps-3">
+                <li class="mb-2"><strong>Scope.</strong> I review your site and reply with questions or a recommendation.</li>
+                <li class="mb-2"><strong>Proposal.</strong> You get a fixed scope and fixed price before any work begins.</li>
+                <li><strong>Audit.</strong> Typical turnaround is about two weeks after scope and access are confirmed.</li>
+              </ol>
+            </div>
+            <div class="info-card">
+              <h2 class="h5">Connect</h2>
+              <p class="mb-0"><a href="https://www.linkedin.com/in/anker-peet/" rel="noopener">Anker Peet on LinkedIn</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5">
+          <p class="h5 text-white fw-bold mb-2">Anker Peet</p>
+          <p class="mb-0">Website health audits for accessibility, performance, and responsiveness.</p>
+        </div>
+        <nav class="col-6 col-md-3" aria-label="Footer">
+          <p class="footer-heading">Explore</p>
+          <ul>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/articles/">Articles</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="col-6 col-md-4">
+          <p class="footer-heading">Get in touch</p>
+          <ul>
+            <li><a href="mailto:ankerpeet@gmail.com">ankerpeet@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/anker-peet/" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom small">&copy; <span data-year>2026</span> Anker Peet. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>

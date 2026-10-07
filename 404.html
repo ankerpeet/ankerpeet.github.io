@@ -1,13 +1,56 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <script>
-            // ====================================================================================================================
-            // This text is simply to make sure the 404.html file is bigger than 512 bytes, else, internet explorer will ignore it.
-            // Thank you internet explorer for requiring such awesome workarounds in order to work properly
-            // ====================================================================================================================
-            sessionStorage.redirect = location.href;
-        </script>
-        <meta http-equiv="refresh" content="0;URL='/'">
-    </head>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found | Anker Peet</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#4f43c9">
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md" aria-label="Primary">
+      <div class="container">
+        <a class="navbar-brand" href="/"><img class="brand-mark" src="/assets/img/logo-96.png" width="32" height="32" alt="">Anker Peet</a>
+        <button class="navbar-toggler" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="primary-nav">
+          <ul class="navbar-nav ms-auto align-items-md-center">
+            <li class="nav-item"><a class="nav-link" href="/services/">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="/articles/">Articles</a></li>
+            <li class="nav-item ms-md-2"><a class="btn btn-primary btn-sm" href="/contact/">Request an audit</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="page-hero section">
+      <div class="container text-center" style="max-width:40rem">
+        <p class="eyebrow">404</p>
+        <h1 class="mb-3">This page couldn't be found.</h1>
+        <p class="lead mb-4">The link may be broken or the page may have moved.</p>
+        <a class="btn btn-primary" href="/">Go to the home page</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom small mt-0 pt-0 border-0">&copy; <span data-year>2026</span> Anker Peet. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
 </html>

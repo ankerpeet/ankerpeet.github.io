@@ -1,68 +1,305 @@
-<!DOCTYPE html>
-<html lang="en" >
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107541220-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Website Accessibility &amp; Performance Audits | Anker Peet</title>
+  <meta name="description" content="Senior-engineer website health audits covering accessibility (WCAG 2.2 AA), performance (Core Web Vitals), and responsiveness, with one clear, prioritized plan your team can act on.">
+  <link rel="canonical" href="https://www.ankerpeet.com/">
+  <meta name="theme-color" content="#4f43c9">
+  <meta name="author" content="Anker Peet">
 
-      gtag('config', 'UA-107541220-1');
-    </script>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Anker Peet">
+  <meta property="og:title" content="Your website should work for everyone - and work fast.">
+  <meta property="og:description" content="Website health audits for accessibility, performance, and responsiveness by senior software engineer Anker Peet.">
+  <meta property="og:url" content="https://www.ankerpeet.com/">
+  <meta property="og:image" content="https://www.ankerpeet.com/assets/img/og-image.jpg">
+  <meta property="og:image:alt" content="Portrait of Anker Peet">
+  <meta name="twitter:card" content="summary_large_image">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Anker Peet currently works as a Software Engineer at Healthwise, a non-profit company located in Boise, Idaho.">
-    <title>Anker Peet | Software Engineer | Web Developer</title>
-    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="./css/variables.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/cube.css">
-    <link rel="stylesheet" href="./css/profile.css">
-  </head>
-  <body>
-    <div class="background">
-      <div class="cube cube--show-home">
-        <div id="homeContent"       class="tab tab-home"></div>
-        <div id="portfolioContent"  class="tab tab-portfolio right"></div>
-        <div id="contactContent"    class="tab tab-contact"></div>
-        <div id="educationContent"  class="tab tab-education"></div>
-        <div id="experienceContent" class="tab tab-experience left"></div> 
-        <div id="appsContent"       class="tab tab-apps"></div>
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="/assets/js/main.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Anker Peet - Website Health Audit",
+    "url": "https://www.ankerpeet.com/",
+    "email": "mailto:ankerpeet@gmail.com",
+    "image": "https://www.ankerpeet.com/assets/img/og-image.jpg",
+    "description": "Website accessibility, performance, and responsiveness audits with a prioritized, developer-ready action plan.",
+    "founder": {
+      "@type": "Person",
+      "name": "Anker Peet",
+      "jobTitle": "Software Engineer",
+      "sameAs": ["https://www.linkedin.com/in/anker-peet/"]
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Website audits",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Accessibility Audit" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 1500, "priceCurrency": "USD" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Performance Audit" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 1000, "priceCurrency": "USD" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Frontend Health Audit" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 2500, "priceCurrency": "USD" } }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md" aria-label="Primary">
+      <div class="container">
+        <a class="navbar-brand" href="/" aria-current="page"><img class="brand-mark" src="/assets/img/logo-96.png" width="32" height="32" alt="">Anker Peet</a>
+        <button class="navbar-toggler" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="primary-nav">
+          <ul class="navbar-nav ms-auto align-items-md-center">
+            <li class="nav-item"><a class="nav-link" href="/services/">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="/articles/">Articles</a></li>
+            <li class="nav-item ms-md-2"><a class="btn btn-primary btn-sm" href="/contact/">Request an audit</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div id="alert"></div>
-      <!-- scripts -->  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./js/services/contactService.js"></script>
-    <script src="./js/controllers/contactController.js"></script>
-    <script src="./js/controllers/cubeController.js"></script>
-    <script src="./js/init.js"></script>
-    <script>
-      (function(){
-        var tabs = ["home", "portfolio", "education", "experience", "apps", "contact"];
-        var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        if (redirect && redirect != location.href) {
+    </nav>
+  </header>
 
-            console.log("redirect: ", redirect)
-            history.replaceState(null, null, redirect);
-            app.controllers.cubeController.changeTab(getTab(redirect));
-        }
-        function getTab(str) {
-          var tab = "home";
-          for(var i = 0; i < tabs.length; i++) {
-            if(str.includes(tabs[i])) {
-              tab = tabs[i];
-            }
-          }
-          console.log("tab: ", tab);
-          return tab;
-        }
-      })();
-    </script>
-  </body>
+  <main id="main" tabindex="-1">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <p class="eyebrow">Website Health Audit</p>
+            <h1 id="hero-title">Your website should work for <span class="accent">everyone</span></h1>
+            <p class="lead mt-4 mb-4">A senior-engineer review of your site's accessibility, performance, and responsive experience. You get one clear, prioritized plan your team can put to work.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a class="btn btn-primary btn-lg" href="/contact/">Start with your URL</a>
+              <a class="btn btn-outline-primary btn-lg" href="/services/">Explore services</a>
+            </div>
+            <ul class="trust-list" aria-label="Highlights">
+              <li><span aria-hidden="true">&#10003;</span> WCAG 2.2 AA</li>
+              <li><span aria-hidden="true">&#10003;</span> Core Web Vitals</li>
+              <li><span aria-hidden="true">&#10003;</span> Fixed-price proposals</li>
+            </ul>
+          </div>
+          <div class="col-lg-5">
+            <div class="hero-card" aria-hidden="true">
+              <p class="fw-bold text-uppercase small mb-2" style="letter-spacing:.1em;color:var(--ap-primary)">Frontend health</p>
+              <div class="score-row"><span class="label">Accessibility</span><span class="meter"><span style="width:92%"></span></span></div>
+              <div class="score-row"><span class="label">Performance</span><span class="meter"><span style="width:86%"></span></span></div>
+              <div class="score-row"><span class="label">Responsiveness</span><span class="meter"><span style="width:95%"></span></span></div>
+              <p class="small mt-3 mb-0" style="color:var(--ap-muted)">Prioritized findings &middot; Evidence &middot; Developer backlog</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Three dimensions -->
+    <section class="section" aria-labelledby="dimensions-title">
+      <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width:44rem">
+          <p class="eyebrow">Manual review beyond automated scans</p>
+          <h2 id="dimensions-title" class="display-5">One audit. Three dimensions of frontend health.</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <article class="feature-card">
+              <span class="num">01</span>
+              <h3>Accessibility</h3>
+              <p class="tagline">Remove barriers before they become blockers.</p>
+              <p class="mb-0">Review key journeys against WCAG 2.2 AA, with keyboard behavior, semantics, forms, focus, contrast, and assistive-technology considerations.</p>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="feature-card">
+              <span class="num">02</span>
+              <h3>Performance</h3>
+              <p class="tagline">Find what makes the experience feel slow.</p>
+              <p class="mb-0">Analyze Core Web Vitals, rendering, JavaScript, images, and fonts. Findings are ranked by likely user impact, not just by what is easiest to measure.</p>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="feature-card">
+              <span class="num">03</span>
+              <h3>Responsiveness</h3>
+              <p class="tagline">Make every breakpoint feel intentional.</p>
+              <p class="mb-0">Test navigation, forms, layouts, touch targets, and content behavior across practical viewport ranges, including edge cases automated tools rarely explain.</p>
+            </article>
+          </div>
+        </div>
+        <p class="text-center mt-5 mb-0"><a href="/services/">See what each audit covers <span aria-hidden="true">&rarr;</span></a></p>
+      </div>
+    </section>
+
+    <!-- Report + process -->
+    <section class="section bg-lavender" aria-labelledby="report-title">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5">
+            <p class="eyebrow">Deliverables</p>
+            <h2 id="report-title" class="display-5 mb-4">The report is built to be acted on.</h2>
+            <ul class="check-list">
+              <li>Executive summary for decision-makers</li>
+              <li>Severity, evidence, and reproduction steps</li>
+              <li>Prioritized developer backlog</li>
+              <li>Code-specific recommendations</li>
+              <li>Clear quick wins and larger fixes</li>
+              <li>Personal walkthrough of findings</li>
+            </ul>
+          </div>
+          <div class="col-lg-7">
+            <h2 class="h3 mb-4" id="process-title">A simple three-step engagement</h2>
+            <ol class="steps d-grid gap-3" aria-labelledby="process-title">
+              <li><h3>Scope</h3><p class="mb-0">Share your URL, key journeys, and business priorities.</p></li>
+              <li><h3>Audit</h3><p class="mb-0">I review the agreed pages and document what matters.</p></li>
+              <li><h3>Act</h3><p class="mb-0">Your team gets a practical backlog, walkthrough, and optional follow-on help.</p></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width:40rem">
+          <p class="eyebrow">Fixed scope and price agreed before work begins</p>
+          <h2 id="pricing-title" class="display-5">Transparent starting prices</h2>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 col-lg-4">
+            <div class="price-card">
+              <h3>Accessibility Audit</h3>
+              <p class="price"><small>from</small> $1,500</p>
+              <p>Focused WCAG 2.2 AA review of agreed pages and journeys.</p>
+              <a class="btn btn-outline-primary" href="/contact/?audit=accessibility">Request a proposal<span class="visually-hidden"> for an Accessibility Audit</span></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="price-card">
+              <h3>Performance Audit</h3>
+              <p class="price"><small>from</small> $1,000</p>
+              <p>Core Web Vitals diagnosis with a prioritized improvement plan.</p>
+              <a class="btn btn-outline-primary" href="/contact/?audit=performance">Request a proposal<span class="visually-hidden"> for a Performance Audit</span></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="price-card featured">
+              <span class="badge-featured">Most complete</span>
+              <h3>Full Frontend Health Audit</h3>
+              <p class="price"><small>from</small> $2,500</p>
+              <p>Accessibility, performance, and responsiveness in one report.</p>
+              <a class="btn btn-primary" href="/contact/?audit=full">Request a proposal<span class="visually-hidden"> for a Full Frontend Health Audit</span></a>
+            </div>
+          </div>
+        </div>
+        <p class="text-center mt-4 mb-1"><strong>Available add-ons:</strong> remediation implementation, re-testing, and monthly monitoring.</p>
+        <p class="text-center small mb-0" style="color:var(--ap-muted)">Final scope depends on site size and complexity.</p>
+      </div>
+    </section>
+
+    <!-- About teaser -->
+    <section class="section bg-lavender" aria-labelledby="about-title">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-md-5 text-center">
+            <img class="portrait" src="/assets/img/ankerpeet-400.jpg" srcset="/assets/img/ankerpeet-400.jpg 400w, /assets/img/ankerpeet-800.jpg 800w" sizes="(min-width: 768px) 420px, 90vw" width="400" height="400" alt="Anker Peet smiling, wearing glasses and a mauve shirt" loading="lazy" decoding="async">
+          </div>
+          <div class="col-md-7">
+            <p class="eyebrow">Who you'll work with</p>
+            <h2 id="about-title" class="display-5 mb-4">Senior engineering judgment, not scanner output.</h2>
+            <p class="lead"><strong>I'm Anker Peet, a software engineer with 9+ years of professional experience.</strong></p>
+            <p>I translate frontend problems into practical recommendations: what is broken, why it matters, and what your team should fix first.</p>
+            <a class="btn btn-outline-primary mt-2" href="/about/">More about me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Articles teaser -->
+    <section class="section" aria-labelledby="latest-title">
+      <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+          <div>
+            <p class="eyebrow">Articles</p>
+            <h2 id="latest-title" class="display-6 fw-bold mb-0">Latest writing</h2>
+          </div>
+          <a href="/articles/">All articles <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <article class="article-card">
+              <ul class="tag-list" aria-label="Tags"><li class="tag">Accessibility</li></ul>
+              <h3><a class="stretched-link" href="/articles/accessibility-beyond-automated-scans/">What automated accessibility scans miss (and how to catch it)</a></h3>
+              <p>Automated tools are a great start, but many real barriers only show up when a person actually uses the page.</p>
+              <p class="article-meta mt-auto mb-0"><time datetime="2026-10-07">October 7, 2026</time><span>8 min read</span></p>
+            </article>
+          </div>
+          <div class="col-md-6">
+            <article class="article-card">
+              <ul class="tag-list" aria-label="Tags"><li class="tag">Performance</li></ul>
+              <h3><a class="stretched-link" href="/articles/practical-guide-core-web-vitals/">A practical guide to Core Web Vitals for busy teams</a></h3>
+              <p>LCP, INP, and CLS explained in plain language, plus the fixes that tend to move the numbers most.</p>
+              <p class="article-meta mt-auto mb-0"><time datetime="2026-10-07">October 7, 2026</time><span>9 min read</span></p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section bg-ink" aria-labelledby="cta-title">
+      <div class="container text-center" style="max-width:46rem">
+        <h2 id="cta-title" class="display-5 mb-3">Start with your URL.</h2>
+        <p class="lead mb-4">Send the site, your goals, and any known problem areas. I'll reply with a scoped recommendation and fixed-price proposal.</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a class="btn btn-light btn-lg" href="/contact/">Get a proposal</a>
+          <a class="btn btn-outline-light btn-lg" href="mailto:ankerpeet@gmail.com">ankerpeet@gmail.com</a>
+        </div>
+        <p class="small mt-4 mb-0">Typical turnaround: about two weeks after scope and access are confirmed.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5">
+          <p class="h5 text-white fw-bold mb-2">Anker Peet</p>
+          <p class="mb-0">Website health audits for accessibility, performance, and responsiveness.</p>
+        </div>
+        <nav class="col-6 col-md-3" aria-label="Footer">
+          <p class="footer-heading">Explore</p>
+          <ul>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/articles/">Articles</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="col-6 col-md-4">
+          <p class="footer-heading">Get in touch</p>
+          <ul>
+            <li><a href="mailto:ankerpeet@gmail.com">ankerpeet@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/anker-peet/" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom small">&copy; <span data-year>2026</span> Anker Peet. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
 </html>
