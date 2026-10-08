@@ -18,6 +18,7 @@
   <meta property="og:image:alt" content="Portrait of Anker Peet">
   <meta name="twitter:card" content="summary_large_image">
 
+  <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='dark'&&t!=='light')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-bs-theme',t)})()</script>
   <link rel="icon" href="/assets/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
@@ -60,6 +61,10 @@
     <nav class="navbar navbar-expand-md" aria-label="Primary">
       <div class="container">
         <a class="navbar-brand" href="/" aria-current="page"><img class="brand-mark" src="/assets/img/logo-96.png" width="32" height="32" alt="">Anker Peet</a>
+        <button class="theme-toggle order-md-last ms-auto ms-md-3 me-2 me-md-0" type="button" aria-pressed="false" aria-label="Dark mode" title="Toggle dark mode">
+          <svg class="icon-moon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
         <button class="navbar-toggler" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -83,7 +88,7 @@
           <div class="col-lg-7">
             <p class="eyebrow">Website Health Audit</p>
             <h1 id="hero-title">Your website should work for <span class="accent">everyone</span></h1>
-            <p class="lead mt-4 mb-4">A senior-engineer review of your site's accessibility, performance, and responsive experience. You get one clear, prioritized plan your team can put to work.</p>
+            <p class="lead mt-4 mb-4">I'm a senior software engineer with over 9 years of experience. I'll go through your site the same way your users do. I check accessibility, performance, and how it holds up on every screen size, then give you a clear plan your team can actually work from.</p>
             <div class="d-flex flex-wrap gap-3">
               <a class="btn btn-primary btn-lg" href="/contact/">Start with your URL</a>
               <a class="btn btn-outline-primary btn-lg" href="/services/">Explore services</a>
@@ -120,7 +125,7 @@
               <span class="num">01</span>
               <h3>Accessibility</h3>
               <p class="tagline">Remove barriers before they become blockers.</p>
-              <p class="mb-0">Review key journeys against WCAG 2.2 AA, with keyboard behavior, semantics, forms, focus, contrast, and assistive-technology considerations.</p>
+              <p class="mb-0">I go through your key pages with a keyboard, a screen reader, and the WCAG 2.2 AA guidelines. I look at forms, focus, contrast, and all the little things that can make a site hard (or impossible) for some people to use.</p>
             </article>
           </div>
           <div class="col-md-4">
@@ -128,7 +133,7 @@
               <span class="num">02</span>
               <h3>Performance</h3>
               <p class="tagline">Find what makes the experience feel slow.</p>
-              <p class="mb-0">Analyze Core Web Vitals, rendering, JavaScript, images, and fonts. Findings are ranked by likely user impact, not just by what is easiest to measure.</p>
+              <p class="mb-0">I dig into Core Web Vitals, JavaScript, images, and fonts to find what's actually slowing things down. Then I rank the fixes by how much your users will notice them, not just by what's easiest to measure.</p>
             </article>
           </div>
           <div class="col-md-4">
@@ -136,7 +141,7 @@
               <span class="num">03</span>
               <h3>Responsiveness</h3>
               <p class="tagline">Make every breakpoint feel intentional.</p>
-              <p class="mb-0">Test navigation, forms, layouts, touch targets, and content behavior across practical viewport ranges, including edge cases automated tools rarely explain.</p>
+              <p class="mb-0">I test your navigation, forms, and layouts across real screen sizes, including the awkward in-between ones. Tiny tap targets and layouts that break at certain widths are easy to miss, and automated tools rarely catch them.</p>
             </article>
           </div>
         </div>
@@ -222,7 +227,7 @@
             <p class="eyebrow">Who you'll work with</p>
             <h2 id="about-title" class="display-5 mb-4">Senior engineering judgment, not scanner output.</h2>
             <p class="lead"><strong>I'm Anker Peet, a software engineer with 9+ years of professional experience.</strong></p>
-            <p>I translate frontend problems into practical recommendations: what is broken, why it matters, and what your team should fix first.</p>
+            <p>My favorite part of being a software engineer has always been building user interfaces that are functional and accessible. Now I help other teams do the same. I'll tell you what's broken, why it matters, and what your team should fix first.</p>
             <a class="btn btn-outline-primary mt-2" href="/about/">More about me</a>
           </div>
         </div>
@@ -244,7 +249,7 @@
             <article class="article-card">
               <ul class="tag-list" aria-label="Tags"><li class="tag">Accessibility</li></ul>
               <h3><a class="stretched-link" href="/articles/accessibility-beyond-automated-scans/">What automated accessibility scans miss (and how to catch it)</a></h3>
-              <p>Automated tools are a great start, but many real barriers only show up when a person actually uses the page.</p>
+              <p>A green Lighthouse score is nice, but it doesn't mean people can actually use your site. Here's what the scanners miss.</p>
               <p class="article-meta mt-auto mb-0"><time datetime="2026-10-07">October 7, 2026</time><span>8 min read</span></p>
             </article>
           </div>
@@ -252,7 +257,7 @@
             <article class="article-card">
               <ul class="tag-list" aria-label="Tags"><li class="tag">Performance</li></ul>
               <h3><a class="stretched-link" href="/articles/practical-guide-core-web-vitals/">A practical guide to Core Web Vitals for busy teams</a></h3>
-              <p>LCP, INP, and CLS explained in plain language, plus the fixes that tend to move the numbers most.</p>
+              <p><span class="term"><button type="button" class="term-trigger" aria-describedby="tip-lcp">LCP</button><span class="term-tip" role="tooltip" id="tip-lcp"><strong>Largest Contentful Paint:</strong> how long it takes for the biggest image or block of text on the screen to show up. Good is 2.5 seconds or less.</span></span>, <span class="term"><button type="button" class="term-trigger" aria-describedby="tip-inp">INP</button><span class="term-tip" role="tooltip" id="tip-inp"><strong>Interaction to Next Paint:</strong> how quickly the page visibly responds when someone clicks, taps, or types. Good is 200 milliseconds or less.</span></span>, and <span class="term"><button type="button" class="term-trigger" aria-describedby="tip-cls">CLS</button><span class="term-tip" role="tooltip" id="tip-cls"><strong>Cumulative Layout Shift:</strong> how much the content jumps around while the page loads. Good is a score of 0.1 or less.</span></span> in plain English, plus the fixes that usually make the biggest difference.</p>
               <p class="article-meta mt-auto mb-0"><time datetime="2026-10-07">October 7, 2026</time><span>9 min read</span></p>
             </article>
           </div>
@@ -264,7 +269,7 @@
     <section class="section bg-ink" aria-labelledby="cta-title">
       <div class="container text-center" style="max-width:46rem">
         <h2 id="cta-title" class="display-5 mb-3">Start with your URL.</h2>
-        <p class="lead mb-4">Send the site, your goals, and any known problem areas. I'll reply with a scoped recommendation and fixed-price proposal.</p>
+        <p class="lead mb-4">Send me your site, your goals, and anything you already know is broken. I'll get back to you with a recommendation and a fixed-price proposal.</p>
         <div class="d-flex flex-wrap justify-content-center gap-3">
           <a class="btn btn-light btn-lg" href="/contact/">Get a proposal</a>
           <a class="btn btn-outline-light btn-lg" href="mailto:ankerpeet@gmail.com">ankerpeet@gmail.com</a>

@@ -22,6 +22,7 @@
   <meta property="article:tag" content="Core Web Vitals">
   <meta name="twitter:card" content="summary_large_image">
 
+  <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='dark'&&t!=='light')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-bs-theme',t)})()</script>
   <link rel="icon" href="/assets/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/img/favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
@@ -66,6 +67,10 @@
     <nav class="navbar navbar-expand-md" aria-label="Primary">
       <div class="container">
         <a class="navbar-brand" href="/"><img class="brand-mark" src="/assets/img/logo-96.png" width="32" height="32" alt="">Anker Peet</a>
+        <button class="theme-toggle order-md-last ms-auto ms-md-3 me-2 me-md-0" type="button" aria-pressed="false" aria-label="Dark mode" title="Toggle dark mode">
+          <svg class="icon-moon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
         <button class="navbar-toggler" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -95,7 +100,7 @@
           <div style="max-width:48rem">
             <ul class="tag-list" aria-label="Tags"><li class="tag">Performance</li><li class="tag">Core Web Vitals</li></ul>
             <h1 class="mb-3">A practical guide to Core Web Vitals for busy teams</h1>
-            <p class="lead">What LCP, INP, and CLS actually measure, why your numbers don't match, and where to spend your time first.</p>
+            <p class="lead">What <span class="term"><button type="button" class="term-trigger" aria-describedby="tip-lcp">LCP</button><span class="term-tip" role="tooltip" id="tip-lcp"><strong>Largest Contentful Paint:</strong> how long it takes for the biggest image or block of text on the screen to show up. Good is 2.5 seconds or less.</span></span>, <span class="term"><button type="button" class="term-trigger" aria-describedby="tip-inp">INP</button><span class="term-tip" role="tooltip" id="tip-inp"><strong>Interaction to Next Paint:</strong> how quickly the page visibly responds when someone clicks, taps, or types. Good is 200 milliseconds or less.</span></span>, and <span class="term"><button type="button" class="term-trigger" aria-describedby="tip-cls">CLS</button><span class="term-tip" role="tooltip" id="tip-cls"><strong>Cumulative Layout Shift:</strong> how much the content jumps around while the page loads. Good is a score of 0.1 or less.</span></span> actually measure, why your numbers don't match, and where to spend your time first.</p>
             <p class="article-meta mb-0"><span>By <a href="/about/">Anker Peet</a></span><time datetime="2026-10-07">October 7, 2026</time><span>9 min read</span></p>
           </div>
         </div>
@@ -115,13 +120,14 @@
             </ol>
           </nav>
 
-          <p>Performance work has a reputation for being a rabbit hole. There are dozens of metrics, hundreds of tools, and endless advice about micro-optimizations. Core Web Vitals cut through a lot of that noise by focusing on three questions every visitor implicitly asks:</p>
+          <p>Performance work can turn into a rabbit hole fast. There are dozens of metrics, a ton of tools, and endless advice about tiny optimizations. Sometimes it feels like searching for a needle in a haystack. Sometimes that haystack is on fire.</p>
+          <p>Core Web Vitals help cut through a lot of that noise. They focus on three questions every visitor is basically asking:</p>
           <ul>
             <li><strong>Is it loading?</strong> Can I see the main content yet?</li>
             <li><strong>Is it responding?</strong> When I tap or type, does something happen right away?</li>
             <li><strong>Is it stable?</strong> Does the page stay put, or does it jump around while I'm reading?</li>
           </ul>
-          <p>Answer those well and your site will feel fast. This guide explains each metric, why the numbers you see often disagree, and the fixes that tend to deliver the biggest improvements.</p>
+          <p>If you get those three right, your site is going to feel fast. In this article I'll go over what each metric means, why your numbers don't always match up, and the fixes that usually make the biggest difference.</p>
 
           <h2 id="the-three-metrics">The three metrics in plain language</h2>
           <div class="table-responsive" tabindex="0" role="region" aria-label="Core Web Vitals thresholds table">
@@ -137,24 +143,24 @@
               </tbody>
             </table>
           </div>
-          <p>Google evaluates these at the <strong>75th percentile</strong> of real page loads, split by mobile and desktop. In practice, that means you need most of your visitors to have a good experience, including people on slower phones and networks, not just the typical visitor on a fast laptop.</p>
-          <p>INP replaced First Input Delay (FID) as a Core Web Vital in 2024. It's a much stricter metric: FID only measured the delay before the <em>first</em> interaction started processing, while INP looks at the full response time across interactions throughout the visit.</p>
+          <p>Google looks at these at the <strong>75th percentile</strong> of real page loads, separately for mobile and desktop. That means most of your visitors need a good experience, including people on older phones and slow connections, not just someone on a fast laptop.</p>
+          <p>INP replaced First Input Delay (FID) as a Core Web Vital in 2024, and it's a lot stricter. FID only measured the delay before the <em>first</em> interaction started. INP looks at how long it takes the page to respond to interactions throughout the whole visit.</p>
 
           <h2 id="lab-vs-field">Lab data vs. field data</h2>
-          <p>The most common question I hear is: "Lighthouse says we're fine, so why does Search Console say we're failing?" The answer is that they measure different things.</p>
+          <p>One of the most common questions I hear is, "Lighthouse says we're fine, so why is Search Console saying we're failing?" It's because they're measuring different things.</p>
           <ul>
             <li><strong>Lab data</strong> (Lighthouse, WebPageTest, Chrome DevTools) runs one simulated page load on one device profile. It's repeatable and great for debugging, but it isn't your users.</li>
             <li><strong>Field data</strong> (the Chrome UX Report, Search Console, or your own real-user monitoring) comes from actual visits. It reflects real devices, networks, cache states, logged-in pages, and user behavior.</li>
           </ul>
-          <p>Field data is the scorecard; lab data is the diagnostic tool. Lighthouse can't measure INP at all in a standard page load because no one is interacting with the page. If your field INP is poor, you need to reproduce the slow interactions manually, with DevTools' Performance panel and CPU throttling turned on.</p>
+          <p>Field data is the scorecard. Lab data is what you use to figure out what's going on. Lighthouse can't really measure INP during a normal page load because nobody is clicking anything. So if your field INP is bad, you'll need to recreate the slow interactions yourself using the Performance panel in Chrome DevTools with CPU throttling turned on.</p>
           <blockquote>
             <p>Optimize for field data. Use lab tools to understand <em>why</em> the field numbers look the way they do.</p>
           </blockquote>
 
           <h2 id="fix-lcp">Fixing slow LCP</h2>
-          <p>LCP is usually a hero image, a large heading, or a banner. Slow LCP almost always comes down to one of four phases: the server responds slowly, the browser discovers the LCP resource late, the resource takes too long to download, or rendering is blocked after it arrives.</p>
+          <p>Your LCP element is usually a hero image, a big heading, or a banner. When LCP is slow, it almost always comes down to one of four things: the server is slow to respond, the browser finds the LCP resource too late, the resource takes too long to download, or something is blocking it from rendering once it arrives.</p>
           <h3>Make the LCP image discoverable and prioritized</h3>
-          <p>If your LCP image is set via CSS <code>background-image</code> or injected by JavaScript, the browser can't find it until much later. Use a real <code>&lt;img&gt;</code> in the HTML and tell the browser it matters:</p>
+          <p>If your LCP image is set with a CSS <code>background-image</code> or added by JavaScript, the browser won't find it until much later. Use a regular <code>&lt;img&gt;</code> in the HTML and let the browser know it's important:</p>
 <pre tabindex="0"><code>&lt;img
   src="/img/hero-1200.jpg"
   srcset="/img/hero-600.jpg 600w, /img/hero-1200.jpg 1200w"
@@ -163,16 +169,16 @@
   alt="Team reviewing a website report"
   fetchpriority="high"&gt;</code></pre>
           <h3>Never lazy-load the LCP image</h3>
-          <p>Adding <code>loading="lazy"</code> to every image is a common "optimization" that actively hurts LCP. Lazy-load images below the fold; load the hero eagerly.</p>
+          <p>Adding <code>loading="lazy"</code> to every image is a really common "optimization" that actually makes LCP worse. Lazy-load the images further down the page, but let the hero image load right away.</p>
           <h3>Right-size and compress</h3>
-          <p>Serve modern formats like AVIF or WebP, and use <code>srcset</code> so phones don't download desktop-sized images. A 2 MB hero image on a mobile connection will dominate your LCP no matter what else you do.</p>
+          <p>Use modern formats like AVIF or WebP, and use <code>srcset</code> so phones aren't downloading images sized for a big desktop monitor. If your hero image is 2 MB, it's going to hurt your LCP on mobile no matter what else you do.</p>
           <h3>Reduce render-blocking resources</h3>
-          <p>Large CSS files and synchronous scripts in the <code>&lt;head&gt;</code> delay the first render. Load non-critical scripts with <code>defer</code> or <code>async</code>, remove unused CSS, and be skeptical of third-party tags that load before your content.</p>
+          <p>Big CSS files and scripts in the <code>&lt;head&gt;</code> that aren't deferred can hold up the first render. Load scripts that aren't critical with <code>defer</code> or <code>async</code>, get rid of CSS you're not using, and be careful with third-party tags that load before your own content.</p>
 
           <h2 id="fix-inp">Fixing poor INP</h2>
-          <p>INP problems are almost always JavaScript problems. When the main thread is busy running a long task, the browser can't respond to the user's click until that task finishes.</p>
+          <p>INP problems are almost always JavaScript problems. When the main thread is busy with a long task, the browser can't respond to someone's click until that task is done.</p>
           <h3>Break up long tasks</h3>
-          <p>Any task over 50 ms is considered "long." If an event handler does a lot of work, do the visible update first and yield back to the browser before continuing:</p>
+          <p>Any task that takes over 50 ms counts as a "long task." If an event handler has a lot of work to do, update the UI first, then give control back to the browser before doing the rest:</p>
 <pre tabindex="0"><code>button.addEventListener('click', async () =&gt; {
   showSpinner();            // update the UI first
 
@@ -187,12 +193,12 @@ function yieldToMain() {
   return new Promise((resolve) =&gt; setTimeout(resolve, 0));
 }</code></pre>
           <h3>Audit third-party scripts</h3>
-          <p>Analytics, tag managers, chat widgets, A/B testing tools, and ad scripts all compete for the same main thread. List every third party, what it's for, and who owns it. It's common to find scripts that nobody remembers adding.</p>
+          <p>Analytics, tag managers, chat widgets, A/B testing tools, and ad scripts are all fighting over the same main thread. Make a list of every third-party script, what it does, and who on your team owns it. It's pretty common to find scripts nobody even remembers adding.</p>
           <h3>Ship less JavaScript</h3>
-          <p>Code splitting, removing unused dependencies, and avoiding heavy client-side rendering for mostly static content all reduce the amount of work the main thread has to do, especially on mid-range Android phones where most INP problems show up.</p>
+          <p>Code splitting, removing dependencies you don't need, and not rendering mostly static content on the client all cut down on how much work the main thread has to do. This matters most on mid-range Android phones, which is where most INP problems show up.</p>
 
           <h2 id="fix-cls">Fixing layout shift</h2>
-          <p>CLS is the most frustrating metric for users: you go to tap a link and an ad loads, pushing it out from under your finger. Fortunately, it's often the easiest to fix.</p>
+          <p>CLS is probably the most annoying one for users. You go to tap a link, an ad loads, and suddenly you've tapped something else. The good news is it's usually the easiest one to fix.</p>
           <ul>
             <li><strong>Always set image and video dimensions.</strong> Add <code>width</code> and <code>height</code> attributes (or CSS <code>aspect-ratio</code>) so the browser reserves space before the file loads.</li>
             <li><strong>Reserve space for dynamic content.</strong> Ads, embeds, cookie banners, and "you might also like" sections should have a fixed minimum height, or appear in overlays that don't push content.</li>
@@ -201,7 +207,7 @@ function yieldToMain() {
           </ul>
 
           <h2 id="where-to-start">Where to start</h2>
-          <p>If you only have a few hours this sprint, here's the order I'd recommend:</p>
+          <p>If you only have a few hours this sprint, this is the order I'd go in:</p>
           <ol>
             <li><strong>Check field data first.</strong> Look at Search Console's Core Web Vitals report or PageSpeed Insights for your key templates. Find out which metric is failing, and on which device type.</li>
             <li><strong>Focus on your highest-value templates.</strong> Home page, product or service pages, and checkout or contact flows matter more than the blog archive.</li>
@@ -209,11 +215,11 @@ function yieldToMain() {
             <li><strong>Add dimensions to every image.</strong> A quick sweep usually eliminates most layout shift.</li>
             <li><strong>Inventory third-party scripts.</strong> Remove what you don't need and defer what you do.</li>
           </ol>
-          <p>Performance isn't a one-time project. New features, new marketing tags, and new images will slowly erode your gains. Add a performance budget to your build, monitor field data monthly, and treat regressions like bugs.</p>
+          <p>Performance isn't a one-and-done project. New features, new marketing tags, and new images will slowly eat away at your improvements. Set a performance budget in your build, check your field data every month, and treat slowdowns like bugs.</p>
 
           <div class="info-card mt-5">
-            <h2 class="h4 mt-0">Not sure what's slowing you down?</h2>
-            <p>My performance audit diagnoses your Core Web Vitals with both field and lab data, then gives your team a prioritized plan ranked by real user impact.</p>
+            <h2 class="h4 mt-0">Not sure what's slowing your site down?</h2>
+            <p>My performance audit looks at your Core Web Vitals using both real user data and my own testing. Your team gets a plan with every fix ranked by how much your users will actually notice it.</p>
             <a class="btn btn-primary" href="/contact/?audit=performance">Request a performance audit</a>
           </div>
 
