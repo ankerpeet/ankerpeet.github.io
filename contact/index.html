@@ -88,28 +88,32 @@
               <h2 class="h4 mb-1">Request a proposal</h2>
               <p class="small mb-4" style="color:var(--ap-muted)">Fields marked <span class="required-mark" aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
 
-              <!-- TODO: set action/method once the backend is wired up. -->
-              <form id="contact-form" action="#" method="post" novalidate>
+              <form id="contact-form" action="https://formspree.io/f/mzedejen" method="post">
+                <div hidden>
+                  <label for="contact-gotcha">Leave this field empty</label>
+                  <input type="text" id="contact-gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+                </div>
                 <div class="row g-3">
                   <div class="col-sm-6">
                     <label for="name" class="form-label">Name <span class="required-mark" aria-hidden="true">*</span></label>
-                    <input type="text" class="form-control" id="name" name="name" autocomplete="name" required>
+                    <input type="text" class="form-control" id="name" name="name" autocomplete="name" minlength="1" maxlength="100" required>
                     <div id="name-error" class="invalid-feedback">Please enter your name.</div>
                   </div>
                   <div class="col-sm-6">
                     <label for="email" class="form-label">Email <span class="required-mark" aria-hidden="true">*</span></label>
-                    <input type="email" class="form-control" id="email" name="email" autocomplete="email" required>
+                    <input type="email" class="form-control" id="email" name="email" autocomplete="email" minlength="3" maxlength="320" required>
                     <div id="email-error" class="invalid-feedback">Please enter a valid email address, like name@example.com.</div>
                   </div>
                   <div class="col-sm-6">
                     <label for="company" class="form-label">Company <span class="fw-normal" style="color:var(--ap-muted)">(optional)</span></label>
-                    <input type="text" class="form-control" id="company" name="company" autocomplete="organization">
+                    <input type="text" class="form-control" id="company" name="company" autocomplete="organization" maxlength="200">
+                    <div id="company-error" class="invalid-feedback">Please use no more than 200 characters.</div>
                   </div>
                   <div class="col-sm-6">
                     <label for="website" class="form-label">Website URL <span class="required-mark" aria-hidden="true">*</span></label>
-                    <input type="url" class="form-control" id="website" name="website" autocomplete="url" placeholder="https://" required aria-describedby="website-hint">
-                    <div id="website-hint" class="form-text">Include https://</div>
-                    <div id="website-error" class="invalid-feedback">Please enter a full URL starting with https://</div>
+                    <input type="url" class="form-control" id="website" name="website" autocomplete="url" placeholder="https://" pattern="https?://.+" minlength="3" maxlength="2048" required aria-describedby="website-hint">
+                    <div id="website-hint" class="form-text">Include https:// (or http://).</div>
+                    <div id="website-error" class="invalid-feedback">Please enter a full website URL starting with https:// or http://.</div>
                   </div>
                   <div class="col-12">
                     <label for="audit" class="form-label">Which audit are you interested in? <span class="required-mark" aria-hidden="true">*</span></label>
@@ -124,8 +128,8 @@
                   </div>
                   <div class="col-12">
                     <label for="message" class="form-label">Goals and known problem areas <span class="required-mark" aria-hidden="true">*</span></label>
-                    <textarea class="form-control" id="message" name="message" rows="6" required aria-describedby="message-hint"></textarea>
-                    <div id="message-hint" class="form-text">Key user journeys, business priorities, deadlines, or anything you already know is broken.</div>
+                    <textarea class="form-control" id="message" name="message" rows="6" minlength="1" maxlength="5000" required aria-describedby="message-hint"></textarea>
+                    <div id="message-hint" class="form-text">Use 1-5,000 characters to describe key user journeys, business priorities, deadlines, or anything you already know is broken.</div>
                     <div id="message-error" class="invalid-feedback">Please tell me a little about your goals.</div>
                   </div>
                   <div class="col-12">

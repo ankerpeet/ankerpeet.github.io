@@ -97,12 +97,13 @@
     });
   }
 
-  // Contact form: client-side validation only; backend to be wired up later.
+  // Keep native validation and POST submission as the no-JavaScript fallback.
   var form = document.getElementById('contact-form');
   if (!form) return;
 
   var status = document.getElementById('form-status');
-  var fields = Array.prototype.slice.call(form.querySelectorAll('input, select, textarea'));
+  var fields = Array.prototype.slice.call(form.querySelectorAll('input:not([name="_gotcha"]), select, textarea'));
+  var honeypot = form.querySelector('[name="_gotcha"]');
 
   // Pre-select audit type from links like /contact/?audit=full
   var auditParam = new URLSearchParams(window.location.search).get('audit');
@@ -114,6 +115,8 @@
   // Link the error message to a field only while it is invalid.
   var setFieldState = function (field, invalid) {
     var errorId = field.id + '-error';
+    var error = document.getElementById(errorId);
+    if (invalid && error) error.textContent = field.validationMessage;
     var ids = (field.getAttribute('aria-describedby') || '').split(' ').filter(function (id) {
       return id && id !== errorId;
     });
@@ -124,34 +127,69 @@
     else field.removeAttribute('aria-invalid');
   };
 
+  var validateField = function (field) {
+    field.setCustomValidity('');
+    var value = field.value.trim();
+    if (field.required && !value) {
+      field.setCustomValidity('Please complete this field.');
+    } else if (value && field.minLength > 0 && value.length < field.minLength) {
+      field.setCustomValidity('Please use at least ' + field.minLength + ' characters, not counting surrounding spaces.');
+    } else if (field.maxLength > 0 && value.length > field.maxLength) {
+      field.setCustomValidity('Please use no more than ' + field.maxLength + ' characters.');
+    } else if (field.type === 'url' && value) {
+      try {
+        var url = new URL(value);
+        if ((url.protocol !== 'https:' && url.protocol !== 'http:') || !url.hostname) {
+          field.setCustomValidity('Please enter a website URL starting with https:// or http://.');
+        }
+      } catch (e) {
+        if (!(e instanceof TypeError)) throw e;
+        field.setCustomValidity('Please enter a full website URL, like https://example.com.');
+      }
+    }
+  };
+
+  var showInvalidStatus = function () {
+    form.classList.add('was-validated');
+    fields.forEach(function (field) { setFieldState(field, !field.validity.valid); });
+    status.className = 'form-status alert alert-danger mt-4';
+    status.textContent = 'Please fix the highlighted fields and try again.';
+  };
+
   fields.forEach(function (field) {
-    field.addEventListener('input', function () {
-      if (form.classList.contains('was-validated')) setFieldState(field, !field.checkValidity());
-    });
+    validateField(field);
+    var update = function () {
+      validateField(field);
+      if (form.classList.contains('was-validated')) {
+        setFieldState(field, !field.validity.valid);
+        if (fields.every(function (item) { return item.validity.valid; })) {
+          status.textContent = '';
+        }
+      }
+    };
+    field.addEventListener('input', update);
+    field.addEventListener('change', update);
   });
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    form.classList.add('was-validated');
+  // Native validation stops submission before the submit event fires.
+  form.addEventListener('invalid', showInvalidStatus, true);
 
+  form.addEventListener('submit', function (e) {
     fields.forEach(function (field) {
-      setFieldState(field, !field.checkValidity());
+      field.value = field.value.trim();
+      validateField(field);
     });
 
-    var firstInvalid = fields.find(function (field) { return !field.checkValidity(); });
-    if (firstInvalid) {
-      status.className = 'form-status alert alert-danger mt-4';
-      status.textContent = 'Please fix the highlighted fields and try again.';
-      firstInvalid.focus();
+    if (!form.reportValidity()) {
+      e.preventDefault();
       return;
     }
 
-    // TODO: replace with a real submission (fetch to your backend / form service).
-    status.className = 'form-status alert alert-success mt-4';
-    status.textContent = 'Thanks! Your message is ready to send. The form is not connected yet, so please email ankerpeet@gmail.com directly for now.';
-    form.reset();
-    form.classList.remove('was-validated');
-    fields.forEach(function (field) { setFieldState(field, false); });
-    status.focus();
+    if (honeypot && honeypot.value) {
+      e.preventDefault();
+      status.className = 'form-status alert alert-danger mt-4';
+      status.textContent = 'Your request could not be sent. Please leave the hidden field empty or email ankerpeet@gmail.com directly.';
+      status.focus();
+    }
   });
 })();
