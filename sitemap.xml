@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.ankerpeet.com/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://www.ankerpeet.com/</loc><lastmod>2026-10-08</lastmod></url>
   <url><loc>https://www.ankerpeet.com/services/</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://www.ankerpeet.com/about/</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://www.ankerpeet.com/contact/</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://www.ankerpeet.com/articles/</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://www.ankerpeet.com/articles/</loc><lastmod>2026-10-08</lastmod></url>
+  <url><loc>https://www.ankerpeet.com/articles/webaim-million-2026/</loc><lastmod>2026-10-08</lastmod></url>
   <url><loc>https://www.ankerpeet.com/articles/accessibility-beyond-automated-scans/</loc><lastmod>2026-10-07</lastmod></url>
   <url><loc>https://www.ankerpeet.com/articles/practical-guide-core-web-vitals/</loc><lastmod>2026-10-07</lastmod></url>
 </urlset>

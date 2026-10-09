@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WebAIM Million 2026: The Accessibility Basics We Still Need to Fix | Anker Peet</title>
+  <meta name="description" content="I look at the 2026 WebAIM Million results, what they can and can't tell us, and how teams might use them to find accessibility barriers on their own sites.">
+  <link rel="canonical" href="https://www.ankerpeet.com/articles/webaim-million-2026/">
+  <meta name="theme-color" content="#4f43c9">
+  <meta name="author" content="Anker Peet">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Anker Peet">
+  <meta property="og:title" content="WebAIM Million 2026: the accessibility basics we still need to fix">
+  <meta property="og:description" content="I look at the 2026 WebAIM Million results, what they can and can't tell us, and how teams might use them to find accessibility barriers on their own sites.">
+  <meta property="og:url" content="https://www.ankerpeet.com/articles/webaim-million-2026/">
+  <meta property="og:image" content="https://www.ankerpeet.com/assets/img/og-image.jpg">
+  <meta property="og:image:alt" content="Portrait of Anker Peet">
+  <meta property="article:published_time" content="2026-10-08">
+  <meta property="article:author" content="https://www.ankerpeet.com/about/">
+  <meta property="article:tag" content="Accessibility">
+  <meta property="article:tag" content="WebAIM Million">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='dark'&&t!=='light')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-bs-theme',t)})()</script>
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="/assets/js/main.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "WebAIM Million 2026: the accessibility basics we still need to fix",
+        "description": "I look at the 2026 WebAIM Million results, what they can and can't tell us, and how teams might use them to find accessibility barriers on their own sites.",
+        "datePublished": "2026-10-08",
+        "dateModified": "2026-10-08",
+        "url": "https://www.ankerpeet.com/articles/webaim-million-2026/",
+        "mainEntityOfPage": "https://www.ankerpeet.com/articles/webaim-million-2026/",
+        "image": "https://www.ankerpeet.com/assets/img/og-image.jpg",
+        "keywords": ["accessibility", "WebAIM Million", "WCAG 2.2", "accessibility testing"],
+        "citation": "https://webaim.org/projects/million/",
+        "author": { "@type": "Person", "name": "Anker Peet", "url": "https://www.ankerpeet.com/about/" },
+        "publisher": { "@type": "Person", "name": "Anker Peet", "url": "https://www.ankerpeet.com/" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ankerpeet.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://www.ankerpeet.com/articles/" },
+          { "@type": "ListItem", "position": 3, "name": "WebAIM Million 2026" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md" aria-label="Primary">
+      <div class="container">
+        <a class="navbar-brand" href="/"><img class="brand-mark" src="/assets/img/logo-96.png" width="32" height="32" alt="">Anker Peet</a>
+        <button class="theme-toggle order-md-last ms-auto ms-md-3 me-2 me-md-0" type="button" aria-pressed="false" aria-label="Dark mode" title="Toggle dark mode">
+          <svg class="icon-moon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="navbar-toggler" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="primary-nav">
+          <ul class="navbar-nav ms-auto align-items-md-center">
+            <li class="nav-item"><a class="nav-link" href="/services/">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="/articles/">Articles</a></li>
+            <li class="nav-item ms-md-2"><a class="btn btn-primary btn-sm" href="/contact/">Request an audit</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <article>
+      <header class="page-hero">
+        <div class="container">
+          <nav aria-label="Breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item"><a href="/articles/">Articles</a></li>
+              <li class="breadcrumb-item active" aria-current="page">WebAIM Million 2026</li>
+            </ol>
+          </nav>
+          <div style="max-width:48rem">
+            <ul class="tag-list" aria-label="Tags"><li class="tag">Accessibility</li><li class="tag">WebAIM Million</li></ul>
+            <h1 class="mb-3">WebAIM Million 2026: the accessibility basics we still need to fix</h1>
+            <p class="lead">Websites keep getting more elaborate, but many of the accessibility problems showing up in them are familiar ones. I wanted to understand what this year's numbers tell us, and what they don't.</p>
+            <p class="article-meta mb-0"><span>By <a href="/about/">Anker Peet</a></span><time datetime="2026-10-08">October 8, 2026</time><span>6 min read</span></p>
+          </div>
+        </div>
+      </header>
+
+      <div class="container section-sm">
+        <div class="prose mx-auto">
+          <nav class="toc mb-5" aria-labelledby="toc-title">
+            <h2 id="toc-title">In this article</h2>
+            <ol>
+              <li><a href="#scope">What the report measures</a></li>
+              <li><a href="#headline">The headline numbers</a></li>
+              <li><a href="#recurring-barriers">Six recurring barriers</a></li>
+              <li><a href="#complexity">More markup is not an accessibility strategy</a></li>
+              <li><a href="#priorities">Where teams should start</a></li>
+              <li><a href="#sources">Sources</a></li>
+            </ol>
+          </nav>
+
+          <p>Accessibility work can feel like a long list of edge cases. But WebAIM's latest analysis points to a more basic problem: familiar barriers are still appearing across a huge number of home pages. For a website team, the useful question isn't only how the overall numbers look. It's which problems you can stop from showing up in your own designs, content, and components.</p>
+          <p>Here, I explain the <a href="https://webaim.org/projects/million/">2026 WebAIM Million report</a> in my own words. The measurements are WebAIM's; the ideas for what teams might do next are my interpretation.</p>
+
+          <h2 id="scope">What the report measures</h2>
+          <p>In February 2026, WebAIM evaluated one million home pages from the Tranco ranking. Its WAVE accessibility engine looked at each page after scripts and styles had been applied. That's useful context: the report examines what a browser renders, not just the HTML sent by the server. <a href="https://webaim.org/projects/million/#intro">[1]</a> <a href="https://webaim.org/projects/million/#sample">[2]</a></p>
+          <p>It's worth keeping two limits in mind. These are <strong>home pages, not complete websites</strong>, and the results cover <strong>issues a tool can detect, not every accessibility barrier</strong>. Problems in a checkout flow, account dashboard, or keyboard interaction may not show up here. WebAIM also cautions that a page with no detected errors isn't necessarily accessible or conformant with the Web Content Accessibility Guidelines (WCAG). <a href="https://webaim.org/projects/million/#sample">[2]</a></p>
+
+          <h2 id="headline">The headline numbers moved in the wrong direction</h2>
+          <p>WebAIM found about <strong>56.1 million errors</strong>, or an average of <strong>56.1 per home page</strong>. That's 10.1% more than in 2025. The share of tested home pages with detectable WCAG failures also rose, from 94.8% to <strong>95.9%</strong> (an increase of 1.1 percentage points). <a href="https://webaim.org/projects/million/#errors">[3]</a> <a href="https://webaim.org/projects/million/#wcag">[4]</a></p>
+          <p>I wouldn't read the remaining 4.1% as proof that those pages are fully accessible. It only means the automated analysis didn't detect a failure. A manual review could still find barriers. And an average error count can't tell us how hard a particular task is: one inaccessible submit button may matter more to someone than many smaller issues elsewhere.</p>
+          <p>Some results did improve. Fewer pages had missing image alternatives or a missing document language than in 2025. At the same time, contrast failures, unlabeled inputs, empty links, and empty buttons became more common. A change in one area doesn't make the other barriers go away. <a href="https://webaim.org/projects/million/#wcag">[4]</a></p>
+
+          <h2 id="recurring-barriers">Six recurring barriers are a good place to start</h2>
+          <p>Six categories made up <strong>96% of detected errors</strong>. The percentages below show how many home pages had each issue, not how many individual elements failed. A page can show up in more than one row, so don't add the percentages together. <a href="https://webaim.org/projects/million/#wcag">[4]</a></p>
+          <div class="table-responsive">
+            <table>
+              <caption>Common error categories in the 2026 WebAIM Million sample. Source: <a href="https://webaim.org/projects/million/#wcag">WebAIM's WCAG conformance findings</a>.</caption>
+              <thead>
+                <tr><th scope="col">Detected issue</th><th scope="col">Home pages affected</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Low-contrast text</th><td>83.9%</td></tr>
+                <tr><th scope="row">Missing alternative text for images</th><td>53.1%</td></tr>
+                <tr><th scope="row">Missing form input labels</th><td>51.0%</td></tr>
+                <tr><th scope="row">Empty links</th><td>46.3%</td></tr>
+                <tr><th scope="row">Empty buttons</th><td>30.6%</td></tr>
+                <tr><th scope="row">Missing document language</th><td>13.5%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>If you maintain a design system, this gives you a useful place to start. Check text colors against their real backgrounds. Make sure controls have names that make sense, especially icon-only buttons. Connect form labels to their inputs. And set the page language in the base template so every page doesn't have to remember it.</p>
+          <p>Image alternatives need thought, not just markup. WebAIM found that 16.2% of images lacked alternative text, not counting images with an empty <code>alt=""</code> attribute. It also found some alternatives that were questionable or repetitive. Adding an attribute everywhere isn't enough: describe meaningful images in context, and leave the alternative text empty for images that are truly decorative. <a href="https://webaim.org/projects/million/#alttext">[5]</a></p>
+          <p>Forms are another place I'd look closely. In the sample, 33.1% of form inputs weren't properly labeled. That's not the same as the table's 51% of home pages with at least one labeling error; the numbers count different things. A placeholder isn't a substitute for a label. Start with a visible label connected to its input, then check whether the instructions and error messages make sense too. <a href="https://webaim.org/projects/million/#labels">[6]</a></p>
+
+          <h2 id="complexity">More markup is not an accessibility strategy</h2>
+          <p>The average home page had <strong>1,437 elements</strong>, 14.3% more than the year before. WebAIM cautions against using error density as an accessibility score. Add more elements and the ratio of errors to elements can go down without removing a single barrier. <a href="https://webaim.org/projects/million/#complexity">[7]</a></p>
+          <p>ARIA (attributes that add accessibility information to HTML) is a good example of why more isn't always better. Pages using ARIA averaged 59.1 detected errors, compared with 42 on pages without it. WebAIM also found that the pages using ARIA were more complex. <strong>That doesn't mean ARIA caused the errors.</strong> It does mean that counting accessibility attributes won't tell you whether a page works well. <a href="https://webaim.org/projects/million/#aria">[8]</a></p>
+          <p>I would start with native HTML controls and add ARIA when an interaction needs it. A custom control still needs the right behavior, focus management, and keyboard support. Adding an accessible name won't take care of those things by itself.</p>
+
+          <h2 id="priorities">Turn the findings into a repeatable workflow</h2>
+          <p>I see the report as a guide to common problems, not a substitute for checking the tasks people do on your own site. Here's how I would use it to organize the work:</p>
+          <ol>
+            <li><strong>Check the important journeys, not only the home page.</strong> Look at navigation, contact forms, registration, purchases, or whatever matters most on your site. Note where someone might get stuck.</li>
+            <li><strong>Fix shared causes in shared components.</strong> A contrast token, a form field pattern, or an unnamed icon button may affect many pages. Fix the shared source, then check a few places where it's used.</li>
+            <li><strong>Give content authors examples they can use.</strong> Explain how to write image alternatives and descriptive links, using examples from your own site instead of a generic checklist.</li>
+            <li><strong>Use scans and hands-on testing together.</strong> Scan for issues tools can detect, then try the key interactions with a keyboard, zoom, and screen reader. When you can, involve people with disabilities in evaluating the experience.</li>
+            <li><strong>Keep track of barriers removed, not only scores.</strong> Record how to reproduce an issue, which task it affects, and whether the fix worked. A better score matters most when the experience improves too.</li>
+          </ol>
+          <p>For a starting manual routine, see <a href="/articles/accessibility-beyond-automated-scans/">what automated accessibility scans miss</a>.</p>
+          <p>For me, the clearest lesson isn't that teams need another tool. It's that familiar problems need a reliable way of being caught before they reach users. Use this report to decide where to look, then test your own site to understand what people need you to fix first.</p>
+
+          <h2 id="sources">Sources</h2>
+          <p>The statistics in this article come from WebAIM's <cite>The WebAIM Million: The 2026 report on the accessibility of the top 1,000,000 home pages</cite>, which I accessed on October 8, 2026. The live report may change when a later edition is published.</p>
+          <ol>
+            <li><a href="https://webaim.org/projects/million/#intro">Introduction</a> &mdash; report year and evaluation timing.</li>
+            <li><a href="https://webaim.org/projects/million/#sample">The sample</a> &mdash; ranking, rendered-page analysis, and automated testing limitations.</li>
+            <li><a href="https://webaim.org/projects/million/#errors">Detected errors</a> &mdash; total errors, per-page average, and annual change.</li>
+            <li><a href="https://webaim.org/projects/million/#wcag">WCAG conformance</a> &mdash; failure prevalence, common categories, and year-over-year comparisons.</li>
+            <li><a href="https://webaim.org/projects/million/#alttext">Images and alternative text</a> &mdash; missing and questionable image alternatives.</li>
+            <li><a href="https://webaim.org/projects/million/#labels">Form labeling</a> &mdash; prevalence of improperly labeled inputs.</li>
+            <li><a href="https://webaim.org/projects/million/#complexity">Home page complexity</a> &mdash; element counts and the limitations of error density.</li>
+            <li><a href="https://webaim.org/projects/million/#aria">ARIA</a> &mdash; error-count associations and the complexity caveat.</li>
+          </ol>
+
+          <div class="info-card mt-5">
+            <h2 class="h4 mt-0">Want to find the barriers on your site?</h2>
+            <p>I combine automated findings with hands-on testing of the pages and journeys that matter to your users. Then I'll walk you through what I found and where I think your team should start.</p>
+            <a class="btn btn-primary" href="/contact/?audit=accessibility">Request an accessibility audit</a>
+          </div>
+          <div class="author-box">
+            <img src="/assets/img/ankerpeet-400.jpg" width="64" height="64" alt="" loading="lazy" decoding="async">
+            <p class="mb-0">I'm <strong><a href="/about/">Anker Peet</a></strong>, a software engineer with over 9 years of experience. I help teams understand how their websites work for people and what they might improve.</p>
+          </div>
+          <p class="mt-4 mb-0"><a href="/articles/"><span aria-hidden="true">&larr;</span> Back to all articles</a></p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5">
+          <p class="h5 text-white fw-bold mb-2">Anker Peet</p>
+          <p class="mb-0">I help teams understand how their websites work for people, and what to improve next.</p>
+        </div>
+        <nav class="col-6 col-md-3" aria-label="Footer">
+          <p class="footer-heading">Explore</p>
+          <ul>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/articles/">Articles</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="col-6 col-md-4">
+          <p class="footer-heading">Get in touch</p>
+          <ul>
+            <li><a href="mailto:ankerpeet@gmail.com">ankerpeet@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/anker-peet/" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom small">&copy; <span data-year>2026</span> Anker Peet. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>

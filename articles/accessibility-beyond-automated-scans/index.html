@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>What Automated Accessibility Scans Miss (and How to Catch It) | Anker Peet</title>
-  <meta name="description" content="Automated accessibility checkers only catch part of the picture. Learn which WCAG 2.2 issues scanners miss and run a 30-minute manual check your team can repeat.">
+  <meta name="description" content="I look at what automated accessibility scans can and can't tell you, then walk through a 30-minute manual check you can try on your own site.">
   <link rel="canonical" href="https://www.ankerpeet.com/articles/accessibility-beyond-automated-scans/">
   <meta name="theme-color" content="#4f43c9">
   <meta name="author" content="Anker Peet">
@@ -12,7 +12,7 @@
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Anker Peet">
   <meta property="og:title" content="What automated accessibility scans miss (and how to catch it)">
-  <meta property="og:description" content="Which WCAG 2.2 issues scanners miss, and a 30-minute manual check any team can run.">
+  <meta property="og:description" content="I look at what automated accessibility scans can and can't tell you, then walk through a 30-minute manual check you can try on your own site.">
   <meta property="og:url" content="https://www.ankerpeet.com/articles/accessibility-beyond-automated-scans/">
   <meta property="og:image" content="https://www.ankerpeet.com/assets/img/og-image.jpg">
   <meta property="og:image:alt" content="Portrait of Anker Peet">
@@ -38,9 +38,9 @@
       {
         "@type": "BlogPosting",
         "headline": "What automated accessibility scans miss (and how to catch it)",
-        "description": "Which WCAG 2.2 issues scanners miss, and a 30-minute manual check any team can run.",
+        "description": "I look at what automated accessibility scans can and can't tell you, then walk through a 30-minute manual check you can try on your own site.",
         "datePublished": "2026-10-07",
-        "dateModified": "2026-10-07",
+        "dateModified": "2026-10-08",
         "url": "https://www.ankerpeet.com/articles/accessibility-beyond-automated-scans/",
         "mainEntityOfPage": "https://www.ankerpeet.com/articles/accessibility-beyond-automated-scans/",
         "image": "https://www.ankerpeet.com/assets/img/og-image.jpg",
@@ -100,7 +100,7 @@
           <div style="max-width:48rem">
             <ul class="tag-list" aria-label="Tags"><li class="tag">Accessibility</li><li class="tag">WCAG 2.2</li></ul>
             <h1 class="mb-3">What automated accessibility scans miss (and how to catch it)</h1>
-            <p class="lead">Automated checkers are a great first step. But a clean report doesn't mean people can actually use your site.</p>
+            <p class="lead">Automated checkers are a useful first step. I wouldn't treat a clean report as proof that people can use the site, though.</p>
             <p class="article-meta mb-0"><span>By <a href="/about/">Anker Peet</a></span><time datetime="2026-10-07">October 7, 2026</time><span>8 min read</span></p>
           </div>
         </div>
@@ -112,31 +112,31 @@
             <h2 id="toc-title">In this article</h2>
             <ol>
               <li><a href="#why-scanners-fall-short">Why scanners fall short</a></li>
-              <li><a href="#what-gets-missed">Seven things scanners routinely miss</a></li>
+              <li><a href="#what-gets-missed">Seven things I check by hand</a></li>
               <li><a href="#thirty-minute-check">A 30-minute manual check</a></li>
               <li><a href="#build-it-in">Building accessibility into how you ship</a></li>
             </ol>
           </nav>
 
-          <p>Tools like Lighthouse, axe, and WAVE have made accessibility testing a lot easier. You run a scan, get a score, and fix the red stuff. That's real progress. The problem is what usually happens next. The score turns green, the ticket gets closed, and everyone assumes the site is accessible.</p>
-          <p>I've seen plenty of sites with near-perfect automated scores that you can't get through with just a keyboard, or forms where a screen reader user can fill out the whole thing without ever hearing what went wrong. The scanner wasn't wrong. It just wasn't checking for those things.</p>
+          <p>Tools like Lighthouse, axe, and WAVE have made accessibility testing easier. You run a scan, get a list of issues, and fix what it finds. That's useful. But what happens after the score turns green? It's easy to close the ticket and assume the site is accessible.</p>
+          <p>I've seen sites with near-perfect scan results that still don't work with a keyboard. I've also seen forms where a screen reader user can submit the whole thing without hearing what went wrong. The scanner didn't make a mistake; it just couldn't check those parts of the experience.</p>
 
-          <h2 id="why-scanners-fall-short">Why scanners fall short</h2>
-          <p>Automated tools are really good at checking things you can figure out just by looking at the code. Does this image have an <code>alt</code> attribute? Does this text have enough contrast? Does this input have a label? Where they struggle is anything that takes <em>judgment</em> or actually <em>using</em> the page.</p>
-          <p>A scanner can tell you an image has alt text. It can't tell you the alt text says "image123.jpg". It can tell you a button exists. It can't press Tab twenty times and notice that focus disappeared behind your sticky header.</p>
+          <h2 id="why-scanners-fall-short">What a scan can and can't tell you</h2>
+          <p>Automated tools are good at checking things they can infer from the code. Does an image have an <code>alt</code> attribute? Is the text contrast high enough? Does an input have a label? They have a harder time with things that require <em>judgment</em> or actually <em>using</em> the page.</p>
+          <p>A scan can tell you an image has alt text, but not whether that text says "image123.jpg." It can find a button, but it can't press Tab through the page and notice that focus disappears behind a sticky header.</p>
           <blockquote>
-            <p>Automated testing tells you whether the code follows certain rules. Manual testing tells you whether a person can complete the task.</p>
+            <p>Automated testing can tell us whether code follows certain rules. Manual testing helps us find out whether someone can complete the task.</p>
           </blockquote>
-          <p>The Web Content Accessibility Guidelines (WCAG) 2.2 are written around what people need, not around rules for code. That's why a lot of the guidelines just can't be fully checked by a machine.</p>
+          <p>The Web Content Accessibility Guidelines (WCAG) 2.2 describe what people need, not just what the code should look like. That's why a machine can't fully check every guideline.</p>
 
-          <h2 id="what-gets-missed">Seven things scanners routinely miss</h2>
+          <h2 id="what-gets-missed">Seven things I check by hand</h2>
 
           <h3>1. Keyboard traps and illogical focus order</h3>
-          <p>A lot of people get around the web using only a keyboard, or devices that work like one. Custom dropdowns, carousels, date pickers, and modals are where things usually go wrong. A scanner won't notice when focus gets stuck inside a widget (<strong>2.1.2 No Keyboard Trap</strong>) or jumps from the header to the footer and back again (<strong>2.4.3 Focus Order</strong>).</p>
+          <p>Some people navigate with a keyboard or a device that works like one. Custom dropdowns, carousels, date pickers, and dialogs can be tricky. A scan won't tell you if focus gets stuck inside a widget (<strong>2.1.2 No Keyboard Trap</strong>) or jumps around in a way that makes the page hard to follow (<strong>2.4.3 Focus Order</strong>).</p>
 
           <h3>2. Focus that's invisible or hidden</h3>
-          <p>Removing the browser's focus outline with <code>outline: none</code> is still really common. And even when there is a focus style, WCAG 2.2 added <strong>2.4.11 Focus Not Obscured (Minimum)</strong>, which means the focused element can't be completely hidden by things like sticky headers, cookie banners, or chat widgets. Scanners almost never catch this one because it depends on where you've scrolled and how the page is laid out.</p>
-          <p>Here's a simple setup that covers the basics:</p>
+          <p>I still see sites remove the browser's focus outline with <code>outline: none</code>. A focus style can also be there but hidden behind a sticky header, cookie banner, or chat widget. WCAG 2.2 calls out this issue in <strong>2.4.11 Focus Not Obscured (Minimum)</strong>, and it can depend on where you've scrolled. That's one reason a scan may miss it.</p>
+          <p>This is a simple starting point:</p>
 <pre tabindex="0"><code>:focus-visible {
   outline: 3px solid #4f43c9;
   outline-offset: 3px;
@@ -148,7 +148,7 @@ html {
 }</code></pre>
 
           <h3>3. Meaningless accessible names</h3>
-          <p>A scanner checks that a link or button <em>has</em> a name. It can't tell you that your page has twelve links that all say "Read more," or an icon button that just gets announced as "button." Screen reader users often jump through a list of all the links or buttons on a page, so each one needs to make sense on its own.</p>
+          <p>A scan can check whether a link or button <em>has</em> a name. It can't tell you if a page has twelve links that all say "Read more," or an icon button that a screen reader announces only as "button." People often move through a list of links or buttons, so each one should make sense on its own.</p>
 <pre tabindex="0"><code>&lt;!-- Ambiguous --&gt;
 &lt;a href="/pricing"&gt;Read more&lt;/a&gt;
 
@@ -158,48 +158,48 @@ html {
 &lt;/a&gt;</code></pre>
 
           <h3>4. Form errors nobody hears</h3>
-          <p>This one is a classic. Someone submits a form, a red border shows up around a field, and that's it. If you can see the screen and you're using a mouse, you might notice. If you're using a screen reader, you get nothing. Good error handling points out which field has the problem, explains it in text (<strong>3.3.1 Error Identification</strong>), suggests a fix when it can (<strong>3.3.3 Error Suggestion</strong>), and makes sure the error actually gets noticed by moving focus to it or announcing it.</p>
-          <p>WCAG 2.2 also added <strong>3.3.7 Redundant Entry</strong>, which basically means don't make people type the same thing twice in the same process, like re-entering a shipping address on the billing step.</p>
+          <p>Here's a common example: someone submits a form, a red border appears around a field, and nothing else happens. If you're looking at the screen, you may notice it. If you're using a screen reader, you may not hear anything. Good error handling identifies the field (<strong>3.3.1 Error Identification</strong>), explains what went wrong, suggests a fix where possible (<strong>3.3.3 Error Suggestion</strong>), and makes sure the message is announced or easy to find.</p>
+          <p>WCAG 2.2 also added <strong>3.3.7 Redundant Entry</strong>. The idea is straightforward: don't make people enter the same information twice in one process, like asking for a shipping address again on the billing step.</p>
 
           <h3>5. Small or crowded touch targets</h3>
-          <p>Also new in WCAG 2.2, <strong>2.5.8 Target Size (Minimum)</strong> says buttons and links should be at least 24 by 24 CSS pixels, or have enough space around them that you won't accidentally tap the wrong thing. Tiny close icons, cramped pagination, and tightly packed social icons are the usual suspects. Some tools can flag this now, but deciding what counts as an exception (like a link in the middle of a sentence) still takes a person.</p>
+          <p>WCAG 2.2's <strong>2.5.8 Target Size (Minimum)</strong> says buttons and links should be at least 24 by 24 CSS pixels, or spaced far enough apart to avoid accidental taps. Tiny close icons, cramped pagination, and tightly packed social icons are common examples. A tool can flag some of these, but deciding whether an exception applies (such as a link in the middle of a sentence) still takes judgment.</p>
 
           <h3>6. Interactions that require precise movement</h3>
-          <p><strong>2.5.7 Dragging Movements</strong> says anything you can drag also needs another way to do it. Think sortable lists, sliders, or map pins. If dragging is the only option, people with tremors or people using voice control can get stuck. The fix is usually pretty simple, like adding "move up" and "move down" buttons or letting people type in a value.</p>
+          <p><strong>2.5.7 Dragging Movements</strong> says that anything people can drag needs another way to complete the same action. That might be a sortable list, slider, or map pin. If dragging is the only option, someone with tremors or using voice control may get stuck. You could add "move up" and "move down" buttons or let people enter a value instead.</p>
 
           <h3>7. Content that breaks when zoomed</h3>
-          <p><strong>1.4.10 Reflow</strong> says your content should still work at a width of 320 CSS pixels without having to scroll sideways. That's about what you get when you zoom a 1280-pixel-wide browser to 400%. Fixed-width containers, sticky elements that take up half the screen, and data tables are usually the problem. And scanners don't zoom.</p>
+          <p><strong>1.4.10 Reflow</strong> says content should work at 320 CSS pixels wide without requiring horizontal scrolling. That's roughly what you get by zooming a 1280-pixel-wide browser to 400%. Fixed-width containers, sticky elements that take up too much space, and data tables can cause trouble. A scan won't zoom in for you.</p>
 
           <h2 id="thirty-minute-check">A 30-minute manual check</h2>
-          <p>You don't need any special tools to catch most of these. Pick the most important thing people do on your site, like signing up, checking out, or requesting a quote, and try this:</p>
+          <p>You don't need special tools to find many of these issues. Pick an important task people do on your site, like signing up, checking out, or requesting a quote, and try it this way:</p>
           <ol>
-            <li><strong>Unplug the mouse.</strong> Complete the journey using only Tab, Shift+Tab, Enter, Space, Escape, and the arrow keys. Can you always see where focus is? Can you reach and operate everything? Can you escape every menu and dialog?</li>
-            <li><strong>Zoom to 400%.</strong> At a 1280-pixel-wide window, zoom the browser to 400%. Does anything get cut off, overlap, or require horizontal scrolling to read?</li>
-            <li><strong>Submit forms wrong on purpose.</strong> Leave required fields empty and enter invalid data. Are errors described in text, tied to their fields, and easy to find?</li>
-            <li><strong>Turn on a screen reader for five minutes.</strong> VoiceOver is built into macOS and iOS; NVDA is free on Windows. Navigate by headings and by links. Does the structure make sense? Do buttons and links say what they do?</li>
-            <li><strong>Check your own content.</strong> Read the alt text on key images and the headings on key pages. Would they make sense to someone who can't see the layout?</li>
+            <li><strong>Put the mouse aside.</strong> Complete the task with Tab, Shift+Tab, Enter, Space, Escape, and the arrow keys. Can you see where focus is? Can you reach and use everything? Can you close every menu and dialog?</li>
+            <li><strong>Zoom to 400%.</strong> In a 1280-pixel-wide window, zoom the browser to 400%. Does anything get cut off or overlap? Do you have to scroll sideways to read?</li>
+            <li><strong>Try submitting a form with errors.</strong> Leave required fields empty or enter something invalid. Are the errors explained, connected to the right fields, and easy to find?</li>
+            <li><strong>Try a screen reader for five minutes.</strong> VoiceOver comes with macOS and iOS; NVDA is free on Windows. Move through the headings and links. Does the page structure make sense? Do the controls tell you what they do?</li>
+            <li><strong>Listen to the content.</strong> Check the alt text on important images and the headings on key pages. Would they make sense without the visual layout?</li>
           </ol>
-          <p>Write down every spot where you got stuck or confused. I promise that list will be more useful than any score.</p>
+          <p>Write down where you got stuck or confused. I think that list is often a more useful starting point than a score.</p>
 
-          <h2 id="build-it-in">Building accessibility into how you ship</h2>
-          <p>An audit is a great place to start, but it works best when it isn't a one-time thing. The teams I've seen keep their sites accessible usually do a few things consistently:</p>
+          <h2 id="build-it-in">Make accessibility part of the work</h2>
+          <p>An audit can help you see where to begin, but it works better as part of an ongoing process. Teams that keep accessibility on track tend to do a few things regularly:</p>
           <ul>
             <li>Run automated checks in CI so regressions in the easy-to-detect issues never reach production.</li>
             <li>Add a short keyboard-and-zoom check to the definition of done for new UI.</li>
             <li>Build accessible patterns once in a shared component library, then reuse them everywhere.</li>
             <li>Re-test key journeys after major redesigns or new feature launches.</li>
           </ul>
-          <p>Automated scans and manual testing aren't competing with each other. Use the scanner to catch the easy stuff quickly, and use real people to find the problems that actually stop your users.</p>
+          <p>Automated scans and manual testing do different jobs. I use scans to catch the issues they can find quickly, then test the experience itself to see where people may run into trouble.</p>
 
           <div class="info-card mt-5">
-            <h2 class="h4 mt-0">Want me to take a look?</h2>
-            <p>My accessibility audit goes through your most important pages against WCAG 2.2 AA, with hands-on keyboard, zoom, and screen reader testing. Your team gets a prioritized list of fixes with code examples.</p>
+            <h2 class="h4 mt-0">Want to look at your site together?</h2>
+            <p>I'll review your important pages against WCAG 2.2 AA and test them with a keyboard, screen reader, and zoom. Then I'll walk you through the findings and suggest what your team could fix first.</p>
             <a class="btn btn-primary" href="/contact/?audit=accessibility">Request an accessibility audit</a>
           </div>
 
           <div class="author-box">
             <img src="/assets/img/ankerpeet-400.jpg" width="64" height="64" alt="" loading="lazy" decoding="async">
-            <p class="mb-0"><strong><a href="/about/">Anker Peet</a></strong> is a software engineer with 9+ years of professional experience who helps teams make their websites accessible, fast, and responsive.</p>
+            <p class="mb-0">I'm <strong><a href="/about/">Anker Peet</a></strong>, a software engineer with over 9 years of experience. I help teams understand how their websites work for people and what they might improve.</p>
           </div>
 
           <p class="mt-4 mb-0"><a href="/articles/"><span aria-hidden="true">&larr;</span> Back to all articles</a></p>
@@ -213,7 +213,7 @@ html {
       <div class="row g-4">
         <div class="col-md-5">
           <p class="h5 text-white fw-bold mb-2">Anker Peet</p>
-          <p class="mb-0">Website health audits for accessibility, performance, and responsiveness.</p>
+          <p class="mb-0">I help teams understand how their websites work for people, and what to improve next.</p>
         </div>
         <nav class="col-6 col-md-3" aria-label="Footer">
           <p class="footer-heading">Explore</p>

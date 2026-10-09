@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Articles on Web Accessibility &amp; Performance | Anker Peet</title>
-  <meta name="description" content="Practical articles on web accessibility, website performance, Core Web Vitals, and responsive design from software engineer Anker Peet.">
+  <meta name="description" content="I write about accessibility, website performance, and responsive design, including the details I've found useful in real projects.">
   <link rel="canonical" href="https://www.ankerpeet.com/articles/">
   <meta name="theme-color" content="#4f43c9">
   <meta name="author" content="Anker Peet">
@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Anker Peet">
   <meta property="og:title" content="Articles | Anker Peet">
-  <meta property="og:description" content="Practical writing on accessibility, performance, and responsive design.">
+  <meta property="og:description" content="I write about accessibility, website performance, and responsive design, including the details I've found useful in real projects.">
   <meta property="og:url" content="https://www.ankerpeet.com/articles/">
   <meta property="og:image" content="https://www.ankerpeet.com/assets/img/og-image.jpg">
   <meta property="og:image:alt" content="Portrait of Anker Peet">
@@ -35,6 +35,7 @@
     "url": "https://www.ankerpeet.com/articles/",
     "author": { "@type": "Person", "name": "Anker Peet", "url": "https://www.ankerpeet.com/about/" },
     "blogPost": [
+      { "@type": "BlogPosting", "headline": "WebAIM Million 2026: the accessibility basics we still need to fix", "url": "https://www.ankerpeet.com/articles/webaim-million-2026/", "datePublished": "2026-10-08" },
       { "@type": "BlogPosting", "headline": "What automated accessibility scans miss (and how to catch it)", "url": "https://www.ankerpeet.com/articles/accessibility-beyond-automated-scans/", "datePublished": "2026-10-07" },
       { "@type": "BlogPosting", "headline": "A practical guide to Core Web Vitals for busy teams", "url": "https://www.ankerpeet.com/articles/practical-guide-core-web-vitals/", "datePublished": "2026-10-07" }
     ]
@@ -78,8 +79,8 @@
         </nav>
         <div style="max-width:44rem">
           <p class="eyebrow">Articles</p>
-          <h1 id="page-title" class="mb-3">Notes on building a better web</h1>
-          <p class="lead mb-0">Things I've learned about accessibility, performance, and responsive design, written in plain English for teams who want their sites to work for everyone.</p>
+          <h1 id="page-title" class="mb-3">Notes on making websites work better</h1>
+          <p class="lead mb-0">I write about things I've learned in accessibility, performance, and responsive design, and why they matter when we're building websites for people.</p>
         </div>
       </div>
     </section>
@@ -89,9 +90,17 @@
         <div class="row g-4">
           <div class="col-md-6">
             <article class="article-card">
+              <ul class="tag-list" aria-label="Tags"><li class="tag">Accessibility</li><li class="tag">WebAIM Million</li></ul>
+              <h2><a class="stretched-link" href="/articles/webaim-million-2026/">WebAIM Million 2026: the accessibility basics we still need to fix</a></h2>
+              <p>I look at what the 2026 WebAIM Million report can tell us about common accessibility barriers, what it can't tell us, and where teams might start.</p>
+              <p class="article-meta mt-auto mb-0"><time datetime="2026-10-08">October 8, 2026</time><span>6 min read</span></p>
+            </article>
+          </div>
+          <div class="col-md-6">
+            <article class="article-card">
               <ul class="tag-list" aria-label="Tags"><li class="tag">Accessibility</li><li class="tag">WCAG 2.2</li></ul>
               <h2><a class="stretched-link" href="/articles/accessibility-beyond-automated-scans/">What automated accessibility scans miss (and how to catch it)</a></h2>
-              <p>A green Lighthouse score is nice, but it doesn't mean people can actually use your site. Here's what the scanners miss, plus a quick 30-minute check any team can do.</p>
+              <p>A clean scan is useful, but it doesn't tell us everything about using a site. I explain what scanners miss and share a 30-minute check you can try yourself.</p>
               <p class="article-meta mt-auto mb-0"><time datetime="2026-10-07">October 7, 2026</time><span>8 min read</span></p>
             </article>
           </div>
@@ -99,7 +108,7 @@
             <article class="article-card">
               <ul class="tag-list" aria-label="Tags"><li class="tag">Performance</li><li class="tag">Core Web Vitals</li></ul>
               <h2><a class="stretched-link" href="/articles/practical-guide-core-web-vitals/">A practical guide to Core Web Vitals for busy teams</a></h2>
-              <p><span class="term"><button type="button" class="term-trigger" aria-describedby="tip-lcp">LCP</button><span class="term-tip" role="tooltip" id="tip-lcp"><strong>Largest Contentful Paint:</strong> how long it takes for the biggest image or block of text on the screen to show up. Good is 2.5 seconds or less.</span></span>, <span class="term"><button type="button" class="term-trigger" aria-describedby="tip-inp">INP</button><span class="term-tip" role="tooltip" id="tip-inp"><strong>Interaction to Next Paint:</strong> how quickly the page visibly responds when someone clicks, taps, or types. Good is 200 milliseconds or less.</span></span>, and <span class="term"><button type="button" class="term-trigger" aria-describedby="tip-cls">CLS</button><span class="term-tip" role="tooltip" id="tip-cls"><strong>Cumulative Layout Shift:</strong> how much the content jumps around while the page loads. Good is a score of 0.1 or less.</span></span> in plain English, why your Lighthouse score and Search Console don't agree, and the fixes that usually make the biggest difference.</p>
+              <p>A plain-English guide to what <span class="term"><button type="button" class="term-trigger" aria-describedby="tip-lcp">LCP</button><span class="term-tip" role="tooltip" id="tip-lcp"><strong>Largest Contentful Paint:</strong> how long it takes for the biggest image or block of text on the screen to show up. Good is 2.5 seconds or less.</span></span>, <span class="term"><button type="button" class="term-trigger" aria-describedby="tip-inp">INP</button><span class="term-tip" role="tooltip" id="tip-inp"><strong>Interaction to Next Paint:</strong> how quickly the page visibly responds when someone clicks, taps, or types. Good is 200 milliseconds or less.</span></span>, and <span class="term"><button type="button" class="term-trigger" aria-describedby="tip-cls">CLS</button><span class="term-tip" role="tooltip" id="tip-cls"><strong>Cumulative Layout Shift:</strong> how much the content jumps around while the page loads. Good is a score of 0.1 or less.</span></span> measure, why your tools may disagree, and where I would start.</p>
               <p class="article-meta mt-auto mb-0"><time datetime="2026-10-07">October 7, 2026</time><span>9 min read</span></p>
             </article>
           </div>
@@ -109,8 +118,8 @@
 
     <section class="section bg-ink" aria-labelledby="cta-title">
       <div class="container text-center" style="max-width:46rem">
-        <h2 id="cta-title" class="display-6 fw-bold mb-3">Want these issues found on your site?</h2>
-        <p class="lead mb-4">I can go through your site and give your team a clear plan for accessibility, performance, and responsiveness.</p>
+        <h2 id="cta-title" class="display-6 fw-bold mb-3">Wondering what might be getting in people's way?</h2>
+        <p class="lead mb-4">I can take a closer look at your site and talk through what I find across accessibility, performance, and responsive design.</p>
         <a class="btn btn-light btn-lg" href="/contact/">Request an audit</a>
       </div>
     </section>
@@ -121,7 +130,7 @@
       <div class="row g-4">
         <div class="col-md-5">
           <p class="h5 text-white fw-bold mb-2">Anker Peet</p>
-          <p class="mb-0">Website health audits for accessibility, performance, and responsiveness.</p>
+          <p class="mb-0">I help teams understand how their websites work for people, and what to improve next.</p>
         </div>
         <nav class="col-6 col-md-3" aria-label="Footer">
           <p class="footer-heading">Explore</p>
