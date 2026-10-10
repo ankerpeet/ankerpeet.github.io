@@ -2,11 +2,11 @@
 
 ## Your website should work for everyone - and work fast.
 
-A senior-engineer review of your site's accessibility, performance, and responsive experience. You get one clear, prioritized plan your team can put to work.
+A review of your site's accessibility, performance, responsive experience, technical SEO, and passive security findings. We agree on which areas and pages to include, and your team gets a prioritized plan.
 
 ---
 
-## One audit. Three dimensions of frontend health.
+## Five areas of website health.
 
 *Manual review beyond automated scans*
 
@@ -21,6 +21,14 @@ Analyze Core Web Vitals, rendering, JavaScript, images, and fonts. Findings are 
 ### 03 / Responsiveness — Make every breakpoint feel intentional.
 
 Test navigation, forms, layouts, touch targets, and content behavior across practical viewport ranges, including edge cases automated tools rarely explain.
+
+### 04 / SEO — Help search engines understand your pages.
+
+Run LibreCrawl checks on agreed URLs and review technical SEO errors and warnings. Scans respect robots.txt and check one page at a time without sitemap discovery or following links. This is not a whole-site link or duplicate-content audit, and it does not guarantee rankings.
+
+### 05 / Security — Review browser-facing protections.
+
+With confirmed ownership or permission, run ZAP's passive baseline and review alerts such as security-header and cookie configuration warnings. The one-minute spider may fetch linked pages, but only alerts matching agreed URLs are included. No active attacks are run. This is not a penetration test or proof that a site is secure.
 
 ---
 
@@ -50,6 +58,10 @@ Test navigation, forms, layouts, touch targets, and content behavior across prac
 | Accessibility Audit | from $1,500 | Focused WCAG 2.2 AA review of agreed pages and journeys. |
 | Performance Audit | from $1,000 | Core Web Vitals diagnosis with a prioritized improvement plan. |
 | **Full Frontend Health Audit** | **from $2,500** | Accessibility, performance, and responsiveness in one report. |
+| Technical SEO Audit | Priced by scope | Selected-page LibreCrawl checks and reviewed recommendations. |
+| Website Security Baseline | Priced by scope | Authorized ZAP passive checks and reviewed recommendations. |
+
+SEO and security are available separately or as additions to a frontend audit. The existing Full Frontend Health Audit starting price covers the three core areas; added reviews are scoped and priced before work begins.
 
 **Available add-ons:** remediation implementation, re-testing, and monthly monitoring.
 

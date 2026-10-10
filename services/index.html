@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Services: Accessibility, Performance &amp; Responsive Audits | Anker Peet</title>
-  <meta name="description" content="I review your site for accessibility, performance, and responsive design, then walk you through what I found and what to address first.">
+  <title>Services: Website Audits, Technical SEO &amp; Security | Anker Peet</title>
+  <meta name="description" content="Accessibility, performance, responsive design, technical SEO reviews, and passive security baselines. Agreed scope, reviewed findings, and practical next steps.">
   <link rel="canonical" href="https://www.ankerpeet.com/services/">
   <meta name="theme-color" content="#4f43c9">
   <meta name="author" content="Anker Peet">
@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Anker Peet">
   <meta property="og:title" content="Website audit services | Anker Peet">
-  <meta property="og:description" content="I review your site for accessibility, performance, and responsive design, then walk you through what I found and what to address first.">
+  <meta property="og:description" content="Accessibility, performance, responsive design, technical SEO reviews, and passive security baselines. Agreed scope, reviewed findings, and practical next steps.">
   <meta property="og:url" content="https://www.ankerpeet.com/services/">
   <meta property="og:image" content="https://www.ankerpeet.com/assets/img/og-image.jpg">
   <meta property="og:image:alt" content="Portrait of Anker Peet">
@@ -54,6 +54,22 @@
         "description": "I review accessibility, performance, and responsive design together, then walk you through what I find.",
         "provider": { "@type": "Person", "name": "Anker Peet", "url": "https://www.ankerpeet.com/about/" },
         "offers": { "@type": "Offer", "priceSpecification": { "@type": "PriceSpecification", "minPrice": 2500, "priceCurrency": "USD" } }
+      },
+      {
+        "@type": "Service",
+        "name": "Technical SEO Audit",
+        "serviceType": "Selected-page technical SEO review",
+        "url": "https://www.ankerpeet.com/services/#seo",
+        "description": "LibreCrawl checks of agreed pages, with reviewed findings and recommendations. Not a whole-site crawl or a ranking guarantee.",
+        "provider": { "@type": "Person", "name": "Anker Peet", "url": "https://www.ankerpeet.com/about/" }
+      },
+      {
+        "@type": "Service",
+        "name": "Website Security Baseline",
+        "serviceType": "Passive website security review",
+        "url": "https://www.ankerpeet.com/services/#security",
+        "description": "An authorized ZAP passive baseline with reviewed findings for agreed URLs. No active attacks; not a penetration test or proof of security.",
+        "provider": { "@type": "Person", "name": "Anker Peet", "url": "https://www.ankerpeet.com/about/" }
       },
       {
         "@type": "BreadcrumbList",
@@ -104,12 +120,14 @@
         <div style="max-width:48rem">
           <p class="eyebrow">Services</p>
           <h1 id="page-title" class="mb-3">A closer look at how your site works.</h1>
-          <p class="lead mb-4">I review websites by hand. Automated tools help, but they only catch part of the picture, so I also test the pages and journeys that matter to your users. We can focus on one area or look at all three together.</p>
+          <p class="lead mb-4">I use automated tools and hands-on review to understand how your site works. Alongside accessibility, performance, and responsive design, I offer technical SEO checks and a passive security baseline. We can focus on one area or combine the reviews that fit your goals.</p>
           <nav aria-label="On this page">
             <ul class="d-flex flex-wrap gap-2 list-unstyled mb-0">
               <li><a class="btn btn-outline-primary btn-sm" href="#accessibility">Accessibility</a></li>
               <li><a class="btn btn-outline-primary btn-sm" href="#performance">Performance</a></li>
               <li><a class="btn btn-outline-primary btn-sm" href="#responsiveness">Responsiveness</a></li>
+              <li><a class="btn btn-outline-primary btn-sm" href="#seo">SEO</a></li>
+              <li><a class="btn btn-outline-primary btn-sm" href="#security">Security</a></li>
               <li><a class="btn btn-outline-primary btn-sm" href="#pricing">Pricing</a></li>
             </ul>
           </nav>
@@ -199,6 +217,60 @@
       </div>
     </section>
 
+    <section id="seo" class="section bg-lavender" aria-labelledby="seo-title">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <span class="eyebrow">04 / SEO</span>
+            <h2 id="seo-title" class="display-6 fw-bold mb-3">Find what gets in the way of search.</h2>
+            <p>A page can look good in a browser while giving search engines too little information about what it offers. I use LibreCrawl to check the pages we agree on for technical SEO issues, then review the findings before recommending changes.</p>
+            <p class="mb-0">The goal is to help search engines discover, understand, and present those pages. This doesn't replace useful content or guarantee a particular search position.</p>
+          </div>
+          <div class="col-lg-7">
+            <div class="info-card">
+              <h3 class="h5 mb-3">What the review includes</h3>
+              <ul class="check-list">
+                <li><strong>Selected-page scans:</strong> LibreCrawl fetches each agreed URL separately and reports technical SEO errors and warnings, such as a missing title tag.</li>
+                <li><strong>Indexing intent:</strong> I review warnings in context rather than recommending that every page be made public or indexable.</li>
+                <li><strong>Evidence and next steps:</strong> reviewed findings, affected URLs, priorities, and recommendations in your report and developer backlog.</li>
+                <li><strong>Re-testing:</strong> available after changes to check the same pages again.</li>
+              </ul>
+              <p class="small mb-3">The scan respects robots.txt. It doesn't follow the site's links or discover sitemaps, so it isn't a whole-site link audit or a cross-page duplicate-content review. A blocked or failed scan is reported as incomplete, not a pass.</p>
+              <p><a href="/articles/why-technical-seo-matters/">Read why technical SEO matters</a>.</p>
+              <a class="btn btn-outline-primary" href="/contact/?audit=seo">Request an SEO proposal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="security" class="section" aria-labelledby="security-title">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <span class="eyebrow">05 / Security</span>
+            <h2 id="security-title" class="display-6 fw-bold mb-3">Review the protections around your pages.</h2>
+            <p>I use ZAP's passive baseline to inspect the responses your site sends, looking for warnings such as missing browser security headers or cookie protections. I review the alerts for relevance and explain what your team could address.</p>
+            <p class="mb-0">This is a starting point, not a penetration test. It doesn't include active attacks or prove that your application, accounts, or infrastructure are secure.</p>
+          </div>
+          <div class="col-lg-7">
+            <div class="info-card">
+              <h3 class="h5 mb-3">What the baseline includes</h3>
+              <ul class="check-list">
+                <li><strong>Permission first:</strong> you must own the site or have authorization to scan it. We'll agree on the target and scope before starting.</li>
+                <li><strong>Passive checks:</strong> ZAP observes HTTP responses for security alerts, including header and cookie configuration warnings where applicable.</li>
+                <li><strong>Bounded reporting:</strong> the spider runs for one minute and may fetch linked pages; only alerts matching agreed URLs enter the report.</li>
+                <li><strong>Reviewed findings:</strong> risk, confidence, evidence, and suggested mitigations, with priorities for your team.</li>
+                <li><strong>Re-testing:</strong> available to check reported issues after fixes. A failed scan isn't evidence that an issue is resolved.</li>
+              </ul>
+              <p><a href="/articles/why-website-security-matters/">Read why website security matters</a>.</p>
+              <a class="btn btn-outline-primary" href="/contact/?audit=security">Request a security proposal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Deliverables -->
     <section class="section bg-ink" aria-labelledby="deliverables-title">
       <div class="container">
@@ -272,7 +344,7 @@
           </div>
           <div class="col-md-6 col-lg-4">
             <div class="price-card featured">
-              <span class="badge-featured">All three areas</span>
+              <span class="badge-featured">Three core areas</span>
               <h3>Full Frontend Health Audit</h3>
               <p class="price"><small>from</small> $2,500</p>
               <p>Accessibility, performance, and responsiveness in one report.</p>
@@ -282,6 +354,22 @@
         </div>
 
         <div class="row g-4 mt-4">
+          <div class="col-md-6">
+            <div class="price-card">
+              <h3>Technical SEO Audit</h3>
+              <p class="h4 my-3">Priced by scope</p>
+              <p>Selected-page LibreCrawl checks, reviewed findings, and a prioritized plan. Available separately or added to a frontend audit.</p>
+              <a class="btn btn-outline-primary" href="/contact/?audit=seo">Request an SEO proposal</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="price-card">
+              <h3>Website Security Baseline</h3>
+              <p class="h4 my-3">Priced by scope</p>
+              <p>Authorized ZAP passive checks and reviewed findings. Available separately or added to a frontend audit; not a penetration test.</p>
+              <a class="btn btn-outline-primary" href="/contact/?audit=security">Request a security proposal</a>
+            </div>
+          </div>
           <div class="col-lg-8 mx-auto">
             <div class="info-card">
               <h3 class="h5">Available add-ons</h3>

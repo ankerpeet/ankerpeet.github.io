@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Website Accessibility &amp; Performance Audits | Anker Peet</title>
-  <meta name="description" content="I review websites for accessibility, performance, and responsive design, then share what I found and where I think your team should start.">
+  <title>Website Audits: Accessibility, Performance, SEO &amp; Security | Anker Peet</title>
+  <meta name="description" content="Website reviews for accessibility, performance, responsive design, technical SEO, and passive security checks, with a prioritized plan for your team.">
   <link rel="canonical" href="https://www.ankerpeet.com/">
   <meta name="theme-color" content="#4f43c9">
   <meta name="author" content="Anker Peet">
@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Anker Peet">
   <meta property="og:title" content="Your website should work for everyone.">
-  <meta property="og:description" content="I review websites for accessibility, performance, and responsive design, then share what I found and where I think your team should start.">
+  <meta property="og:description" content="Website reviews for accessibility, performance, responsive design, technical SEO, and passive security checks, with a prioritized plan for your team.">
   <meta property="og:url" content="https://www.ankerpeet.com/">
   <meta property="og:image" content="https://www.ankerpeet.com/assets/img/og-image.jpg">
   <meta property="og:image:alt" content="Portrait of Anker Peet">
@@ -35,7 +35,7 @@
     "url": "https://www.ankerpeet.com/",
     "email": "mailto:ankerpeet@gmail.com",
     "image": "https://www.ankerpeet.com/assets/img/og-image.jpg",
-    "description": "I review websites for accessibility, performance, and responsive design, then help teams understand what they might improve.",
+    "description": "I review accessibility, performance, responsive design, technical SEO, and passive security findings, then help teams decide what to improve.",
     "founder": {
       "@type": "Person",
       "name": "Anker Peet",
@@ -48,7 +48,9 @@
       "itemListElement": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Accessibility Audit" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 1500, "priceCurrency": "USD" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Performance Audit" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 1000, "priceCurrency": "USD" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Frontend Health Audit" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 2500, "priceCurrency": "USD" } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Frontend Health Audit" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 2500, "priceCurrency": "USD" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Technical SEO Audit", "url": "https://www.ankerpeet.com/services/#seo" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Security Baseline", "url": "https://www.ankerpeet.com/services/#security" } }
       ]
     }
   }
@@ -88,7 +90,7 @@
           <div class="col-lg-7">
             <p class="eyebrow">Website Health Audit</p>
             <h1 id="hero-title">Your website should work for <span class="accent">everyone</span></h1>
-            <p class="lead mt-4 mb-4">I'm a software engineer with over 9 years of experience, and I look at websites the way people actually use them. I check accessibility, performance, and how the site works across screen sizes. Then I explain what I found and what I think is worth fixing first.</p>
+            <p class="lead mt-4 mb-4">I'm a software engineer with over 9 years of experience, and I look at websites the way people actually use them. I review accessibility, performance, and how the site works across screen sizes. I also offer technical SEO checks and a passive security baseline. Then I explain what I found and what I think is worth fixing first.</p>
             <div class="d-flex flex-wrap gap-3">
               <a class="btn btn-primary btn-lg" href="/contact/">Send me your URL</a>
               <a class="btn btn-outline-primary btn-lg" href="/services/">See what I review</a>
@@ -101,10 +103,12 @@
           </div>
           <div class="col-lg-5">
             <div class="hero-card" aria-hidden="true">
-              <p class="fw-bold text-uppercase small mb-2" style="letter-spacing:.1em;color:var(--ap-primary)">Frontend health</p>
+              <p class="fw-bold text-uppercase small mb-2" style="letter-spacing:.1em;color:var(--ap-primary)">Website health</p>
               <div class="score-row"><span class="label">Accessibility</span><span class="meter"><span style="width:92%"></span></span></div>
               <div class="score-row"><span class="label">Performance</span><span class="meter"><span style="width:86%"></span></span></div>
               <div class="score-row"><span class="label">Responsiveness</span><span class="meter"><span style="width:95%"></span></span></div>
+              <div class="score-row"><span class="label">SEO</span><span class="small">Selected-page checks</span></div>
+              <div class="score-row"><span class="label">Security</span><span class="small">Passive baseline</span></div>
               <p class="small mt-3 mb-0" style="color:var(--ap-muted)">Prioritized findings &middot; Evidence &middot; Developer backlog</p>
             </div>
           </div>
@@ -112,15 +116,15 @@
       </div>
     </section>
 
-    <!-- Three dimensions -->
+    <!-- Audit areas -->
     <section class="section" aria-labelledby="dimensions-title">
       <div class="container">
         <div class="text-center mx-auto mb-5" style="max-width:44rem">
           <p class="eyebrow">Manual review beyond automated scans</p>
-          <h2 id="dimensions-title" class="display-5">Three parts of a website people can use.</h2>
+          <h2 id="dimensions-title" class="display-5">Five things your website might be missing.</h2>
         </div>
         <div class="row g-4">
-          <div class="col-md-4">
+          <div class="col-md-6 col-lg-4">
             <article class="feature-card">
               <span class="num">01</span>
               <h3>Accessibility</h3>
@@ -128,7 +132,7 @@
               <p class="mb-0">I check your key pages against WCAG 2.2 AA and try them with a keyboard and screen reader. That helps me find issues with forms, focus, contrast, and the smaller details that can make a site difficult to use.</p>
             </article>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-6 col-lg-4">
             <article class="feature-card">
               <span class="num">02</span>
               <h3>Performance</h3>
@@ -136,12 +140,28 @@
               <p class="mb-0">I look at Core Web Vitals, JavaScript, images, and fonts to understand what's slowing the site down. Then I prioritize the fixes by how much they'll matter to your users.</p>
             </article>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-6 col-lg-4">
             <article class="feature-card">
               <span class="num">03</span>
               <h3>Responsiveness</h3>
               <p class="tagline">Check the sizes people actually use.</p>
               <p class="mb-0">I test navigation, forms, and layouts on different screen sizes, including the awkward in-between ones. Small tap targets and layouts that break at certain widths are easy to miss if you only check a few standard sizes.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-6">
+            <article class="feature-card">
+              <span class="num">04</span>
+              <h3>SEO</h3>
+              <p class="tagline">Help search engines understand your pages.</p>
+              <p class="mb-0">I use LibreCrawl to check the pages we agree on for technical SEO issues, then review the warnings before recommending changes. This is a selected-page review, not a whole-site crawl or a promise of higher rankings.</p>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-6">
+            <article class="feature-card">
+              <span class="num">05</span>
+              <h3>Security</h3>
+              <p class="tagline">Check the protections your site sends to browsers.</p>
+              <p class="mb-0">With your permission, I run a ZAP passive baseline and review findings such as missing security headers or cookie protections. There are no active attack tests, and a clean scan isn't proof that a site is secure.</p>
             </article>
           </div>
         </div>
@@ -203,7 +223,7 @@
           </div>
           <div class="col-md-6 col-lg-4">
             <div class="price-card featured">
-              <span class="badge-featured">All three areas</span>
+              <span class="badge-featured">Three core areas</span>
               <h3>Full Frontend Health Audit</h3>
               <p class="price"><small>from</small> $2,500</p>
               <p>Accessibility, performance, and responsiveness in one report.</p>
@@ -211,6 +231,7 @@
             </div>
           </div>
         </div>
+        <p class="text-center mt-4 mb-0"><strong>SEO and security:</strong> available separately or added to a frontend audit, with a fixed-price proposal based on scope. <a href="/services/#seo">See the SEO review</a> or <a href="/services/#security">security baseline</a>.</p>
         <p class="text-center mt-4 mb-1"><strong>If you need more help:</strong> I can also help with fixes, re-testing, or monthly monitoring.</p>
         <p class="text-center small mb-0" style="color:var(--ap-muted)">The final price depends on the size and complexity of your site.</p>
       </div>
@@ -245,6 +266,22 @@
           <a href="/articles/">All articles <span aria-hidden="true">&rarr;</span></a>
         </div>
         <div class="row g-4">
+          <div class="col-md-6">
+            <article class="article-card">
+              <ul class="tag-list" aria-label="Tags"><li class="tag">SEO</li></ul>
+              <h3><a class="stretched-link" href="/articles/why-technical-seo-matters/">Why technical SEO matters when your website already looks good</a></h3>
+              <p>How search engines find and understand your pages, what can get in the way, and where a technical review helps.</p>
+              <p class="article-meta mt-auto mb-0"><time datetime="2026-10-09">October 9, 2026</time><span>5 min read</span></p>
+            </article>
+          </div>
+          <div class="col-md-6">
+            <article class="article-card">
+              <ul class="tag-list" aria-label="Tags"><li class="tag">Security</li></ul>
+              <h3><a class="stretched-link" href="/articles/why-website-security-matters/">Why website security matters, even for a small site</a></h3>
+              <p>What browser protections can tell us, what a passive scan misses, and how to make security part of routine maintenance.</p>
+              <p class="article-meta mt-auto mb-0"><time datetime="2026-10-09">October 9, 2026</time><span>5 min read</span></p>
+            </article>
+          </div>
           <div class="col-md-6">
             <article class="article-card">
               <ul class="tag-list" aria-label="Tags"><li class="tag">Accessibility</li></ul>
