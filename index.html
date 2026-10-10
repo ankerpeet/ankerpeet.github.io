@@ -44,13 +44,20 @@
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Website audits",
+      "name": "Website audits and monthly scans",
       "itemListElement": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Accessibility Audit" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 1500, "priceCurrency": "USD" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Performance Audit" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 1000, "priceCurrency": "USD" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Responsiveness Audit" }, "priceSpecification": { "@type": "PriceSpecification", "price": 250, "priceCurrency": "USD" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Frontend Health Audit" }, "priceSpecification": { "@type": "PriceSpecification", "minPrice": 2500, "priceCurrency": "USD" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Technical SEO Audit", "url": "https://www.ankerpeet.com/services/#seo" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Security Baseline", "url": "https://www.ankerpeet.com/services/#security" } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Technical SEO Audit", "url": "https://www.ankerpeet.com/services/#seo" }, "priceSpecification": { "@type": "PriceSpecification", "price": 500, "priceCurrency": "USD" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Security Baseline", "url": "https://www.ankerpeet.com/services/#security" }, "priceSpecification": { "@type": "PriceSpecification", "price": 500, "priceCurrency": "USD" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Accessibility Scan" }, "priceSpecification": { "@type": "UnitPriceSpecification", "price": 25, "priceCurrency": "USD", "unitText": "MONTH" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Performance Scan" }, "priceSpecification": { "@type": "UnitPriceSpecification", "price": 25, "priceCurrency": "USD", "unitText": "MONTH" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Responsive Design Scan" }, "priceSpecification": { "@type": "UnitPriceSpecification", "price": 25, "priceCurrency": "USD", "unitText": "MONTH" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Technical SEO Scan" }, "priceSpecification": { "@type": "UnitPriceSpecification", "price": 25, "priceCurrency": "USD", "unitText": "MONTH" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Security Scan" }, "priceSpecification": { "@type": "UnitPriceSpecification", "price": 25, "priceCurrency": "USD", "unitText": "MONTH" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Full Scan" }, "priceSpecification": { "@type": "UnitPriceSpecification", "price": 99, "priceCurrency": "USD", "unitText": "MONTH" } }
       ]
     }
   }
@@ -90,7 +97,7 @@
           <div class="col-lg-7">
             <p class="eyebrow">Website Health Audit</p>
             <h1 id="hero-title">Your website should work for <span class="accent">everyone</span></h1>
-            <p class="lead mt-4 mb-4">I'm a software engineer with over 9 years of experience, and I look at websites the way people actually use them. I review accessibility, performance, and how the site works across screen sizes. I also offer technical SEO checks and a passive security baseline. Then I explain what I found and what I think is worth fixing first.</p>
+            <p class="lead mt-4 mb-4">I'm a software engineer with over 9 years of experience. I look at websites the way people actually use them. I review accessibility, performance, and how the site works across screen sizes. I also offer technical SEO checks and security testing. Then I explain what I found and what I think is worth fixing first.</p>
             <div class="d-flex flex-wrap gap-3">
               <a class="btn btn-primary btn-lg" href="/contact/">Send me your URL</a>
               <a class="btn btn-outline-primary btn-lg" href="/services/">See what I review</a>
@@ -104,11 +111,11 @@
           <div class="col-lg-5">
             <div class="hero-card" aria-hidden="true">
               <p class="fw-bold text-uppercase small mb-2" style="letter-spacing:.1em;color:var(--ap-primary)">Website health</p>
-              <div class="score-row"><span class="label">Accessibility</span><span class="meter"><span style="width:92%"></span></span></div>
+              <div class="score-row"><span class="label">Accessibility</span><span class="meter"><span style="width:70%"></span></span></div>
               <div class="score-row"><span class="label">Performance</span><span class="meter"><span style="width:86%"></span></span></div>
               <div class="score-row"><span class="label">Responsiveness</span><span class="meter"><span style="width:95%"></span></span></div>
-              <div class="score-row"><span class="label">SEO</span><span class="small">Selected-page checks</span></div>
-              <div class="score-row"><span class="label">Security</span><span class="small">Passive baseline</span></div>
+              <div class="score-row"><span class="label">SEO</span><span class="meter"><span style="width:86%"></span></span></div>
+              <div class="score-row"><span class="label">Security</span><span class="meter"><span style="width:80%"></span></span></div>
               <p class="small mt-3 mb-0" style="color:var(--ap-muted)">Prioritized findings &middot; Evidence &middot; Developer backlog</p>
             </div>
           </div>
@@ -129,7 +136,7 @@
               <span class="num">01</span>
               <h3>Accessibility</h3>
               <p class="tagline">Find the things that get in people's way.</p>
-              <p class="mb-0">I check your key pages against WCAG 2.2 AA and try them with a keyboard and screen reader. That helps me find issues with forms, focus, contrast, and the smaller details that can make a site difficult to use.</p>
+              <p class="mb-0">I check your key pages against WCAG 2.2 AA and manually test them with a keyboard and screen reader. That helps me find issues with forms, focus, contrast, and the smaller details that can make a site difficult to use.</p>
             </article>
           </div>
           <div class="col-md-6 col-lg-4">
@@ -148,20 +155,20 @@
               <p class="mb-0">I test navigation, forms, and layouts on different screen sizes, including the awkward in-between ones. Small tap targets and layouts that break at certain widths are easy to miss if you only check a few standard sizes.</p>
             </article>
           </div>
-          <div class="col-md-6 col-lg-6">
+          <div class="col-md-6 col-lg-4">
             <article class="feature-card">
               <span class="num">04</span>
               <h3>SEO</h3>
               <p class="tagline">Help search engines understand your pages.</p>
-              <p class="mb-0">I use LibreCrawl to check the pages we agree on for technical SEO issues, then review the warnings before recommending changes. This is a selected-page review, not a whole-site crawl or a promise of higher rankings.</p>
+              <p class="mb-0">I perform a crawl of your website for technical SEO issues, then review the warnings and recommend changes.</p>
             </article>
           </div>
-          <div class="col-md-6 col-lg-6">
+          <div class="col-md-6 col-lg-4">
             <article class="feature-card">
               <span class="num">05</span>
               <h3>Security</h3>
               <p class="tagline">Check the protections your site sends to browsers.</p>
-              <p class="mb-0">With your permission, I run a ZAP passive baseline and review findings such as missing security headers or cookie protections. There are no active attack tests, and a clean scan isn't proof that a site is secure.</p>
+              <p class="mb-0">I perform a passive baseline scan and review of findings such as missing security headers or cookie protections.</p>
             </article>
           </div>
         </div>
@@ -198,7 +205,7 @@
     </section>
 
     <!-- Pricing -->
-    <section class="section" aria-labelledby="pricing-title">
+    <section id="pricing" class="section bg-lavender" aria-labelledby="pricing-title">
       <div class="container">
         <div class="text-center mx-auto mb-5" style="max-width:40rem">
           <p class="eyebrow">Fixed scope and price agreed before work begins</p>
@@ -222,18 +229,102 @@
             </div>
           </div>
           <div class="col-md-6 col-lg-4">
+            <div class="price-card">
+              <h3>Responsiveness Audit</h3>
+              <p class="price">$250</p>
+              <p>Review of agreed pages across screen sizes, including layout, content behavior, orientation, and zoom.</p>
+              <a class="btn btn-outline-primary" href="/contact/?audit=responsiveness">Request a proposal<span class="visually-hidden"> for a Responsiveness Audit</span></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="price-card">
+              <h3>Technical SEO Audit</h3>
+              <p class="price">$500</p>
+              <p>Selected-page LibreCrawl checks, reviewed findings, and a prioritized plan. Available separately or added to a frontend audit.</p>
+              <a class="btn btn-outline-primary" href="/contact/?audit=seo">Request a $500 SEO audit</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="price-card">
+              <h3>Website Security Baseline</h3>
+              <p class="price">$500</p>
+              <p>Authorized ZAP passive checks and reviewed findings. Available separately or added to a frontend audit; not a penetration test.</p>
+              <a class="btn btn-outline-primary" href="/contact/?audit=security">Request a $500 security audit</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
             <div class="price-card featured">
-              <span class="badge-featured">Three core areas</span>
+              <span class="badge-featured">All five audit types</span>
               <h3>Full Frontend Health Audit</h3>
               <p class="price"><small>from</small> $2,500</p>
-              <p>Accessibility, performance, and responsiveness in one report.</p>
+              <p>Accessibility, performance, responsiveness, technical SEO, and security in one report.</p>
               <a class="btn btn-primary" href="/contact/?audit=full">Request a proposal<span class="visually-hidden"> for a Full Frontend Health Audit</span></a>
             </div>
           </div>
         </div>
-        <p class="text-center mt-4 mb-0"><strong>SEO and security:</strong> available separately or added to a frontend audit, with a fixed-price proposal based on scope. <a href="/services/#seo">See the SEO review</a> or <a href="/services/#security">security baseline</a>.</p>
-        <p class="text-center mt-4 mb-1"><strong>If you need more help:</strong> I can also help with fixes, re-testing, or monthly monitoring.</p>
-        <p class="text-center small mb-0" style="color:var(--ap-muted)">The final price depends on the size and complexity of your site.</p>
+        <p class="text-center small mt-4 mb-0" style="color:var(--ap-muted)">The final price depends on the size and complexity of your site.</p>
+      </div>
+    </section>
+
+    <!-- Automated monthly scans -->
+    <section id="monthly-scans" class="section" aria-labelledby="monthly-scans-title">
+      <div class="container">
+        <div class="text-center mx-auto mb-5" style="max-width:42rem">
+          <p class="eyebrow">Ongoing automated checks</p>
+          <h2 id="monthly-scans-title" class="display-6 fw-bold">Automated Monthly Scans</h2>
+          <p class="lead mb-0">Choose one scan type for $25 a month, or get the full scan for $99 a month. These automated checks are separate from the hands-on audits above.</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 col-lg-4">
+            <div class="price-card">
+              <h3>Accessibility Scan</h3>
+              <p class="price">$25 <small>/ month</small></p>
+              <p>Automated monthly checks for accessibility issues.</p>
+              <a class="btn btn-outline-primary" href="/contact/?audit=monthly-accessibility">Request this scan<span class="visually-hidden">: Accessibility Scan</span></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="price-card">
+              <h3>Performance Scan</h3>
+              <p class="price">$25 <small>/ month</small></p>
+              <p>Automated monthly checks for website performance.</p>
+              <a class="btn btn-outline-primary" href="/contact/?audit=monthly-performance">Request this scan<span class="visually-hidden">: Performance Scan</span></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="price-card">
+              <h3>Responsive Design Scan</h3>
+              <p class="price">$25 <small>/ month</small></p>
+              <p>Automated monthly checks of how your pages work across screen sizes.</p>
+              <a class="btn btn-outline-primary" href="/contact/?audit=monthly-responsive">Request this scan<span class="visually-hidden">: Responsive Design Scan</span></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="price-card">
+              <h3>Technical SEO Scan</h3>
+              <p class="price">$25 <small>/ month</small></p>
+              <p>Automated monthly checks for technical SEO issues.</p>
+              <a class="btn btn-outline-primary" href="/contact/?audit=monthly-seo">Request this scan<span class="visually-hidden">: Technical SEO Scan</span></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="price-card">
+              <h3>Security Scan</h3>
+              <p class="price">$25 <small>/ month</small></p>
+              <p>Automated monthly checks for website security issues.</p>
+              <a class="btn btn-outline-primary" href="/contact/?audit=monthly-security">Request this scan<span class="visually-hidden">: Security Scan</span></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="price-card featured">
+              <span class="badge-featured">All five scan types</span>
+              <h3>Full Scan</h3>
+              <p class="price">$99 <small>/ month</small></p>
+              <p>Accessibility, performance, responsive design, technical SEO, and security checks each month.</p>
+              <a class="btn btn-primary" href="/contact/?audit=monthly-full">Request the full scan</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
